@@ -1123,6 +1123,10 @@ def render_overview(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:
             unsafe_allow_html=True,
         )
 
+    st.markdown(
+        '<div class="section-title" style="margin-top:1.5rem;">Key metrics for the selected fund</div>',
+        unsafe_allow_html=True,
+    )
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Annualised return", fmt_pct(selected_row["annualised_return"]))
     m2.metric("Annualised volatility", fmt_pct(selected_row["annualised_volatility"]))
@@ -1431,6 +1435,10 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
         unsafe_allow_html=True,
     )
 
+    st.markdown(
+        '<div class="section-title" style="margin-top:1.5rem;">Sentiment coverage metrics</div>',
+        unsafe_allow_html=True,
+    )
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Usable unique headlines", fmt_count(checks.loc[checks["check"] == "Scored headline coverage", "observed"].iloc[0]))
     m2.metric("Baseline neutral share", fmt_pct(sentiment_validation.loc[sentiment_validation["diagnostic"] == "baseline_neutral_share", "value"].iloc[0]))
