@@ -10,7 +10,12 @@ import streamlit as st
 
 from src import app_logic
 
-st.set_page_config(layout="wide", page_title="SignalScope", page_icon="💎")
+st.set_page_config(
+    layout="wide",
+    page_title="SignalScope",
+    page_icon="◈",
+    initial_sidebar_state="auto",
+)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -59,6 +64,8 @@ REQUIRED_ARTIFACTS = {
     "sector_sentiment_index": DATA_DIR / "sector_sentiment_index.csv",
     "sentiment_validation": TABLES_DIR / "sentiment_validation.csv",
     "dual_domain_validation": TABLES_DIR / "dual_domain_sentiment_validation.csv",
+    "finance_validation_metrics": TABLES_DIR / "finance_validation_metrics.csv",
+    "finance_confusion_matrix": TABLES_DIR / "finance_confusion_matrix.csv",
     "finance_lexicon": TABLES_DIR / "finance_lexicon_extension.csv",
     "model_specification": TABLES_DIR / "model_specification.csv",
     "asset_data_use_register": TABLES_DIR / "asset_data_use_register.csv",
@@ -87,30 +94,31 @@ ACADEMIC_BANNER = (
     "Backtested and descriptive evidence • Not personal financial advice."
 )
 MOVIE_TITLE = "Movie-to-Market Lab: Spider-Man versus Barbie"
+PUBLIC_REPOSITORY_URL = "https://github.com/farhanjamilhikal/z5529169_projectB"
 
 PALETTE = {
-    "dark_bg": "#0B0F2F",
-    "dark_bg_alt": "#141B4B",
-    "dark_panel": "rgba(20, 27, 75, 0.72)",
-    "dark_panel_soft": "rgba(255, 255, 255, 0.06)",
-    "dark_border": "rgba(255,255,255,0.14)",
-    "dark_text": "#FFFFFF",
-    "dark_muted": "rgba(255,255,255,0.76)",
-    "light_bg": "#F6F7FD",
-    "light_bg_alt": "#FFFFFF",
-    "light_panel": "rgba(255,255,255,0.92)",
-    "light_panel_soft": "rgba(11, 15, 47, 0.03)",
-    "light_border": "rgba(11,15,47,0.10)",
-    "light_text": "#0B0F2F",
-    "light_muted": "rgba(11,15,47,0.70)",
-    "pink": "#FF4FA3",
-    "pink_strong": "#FF007F",
-    "cyan": "#3FD6FF",
-    "cyan_strong": "#00D4FF",
-    "purple": "#6C63FF",
-    "positive": "#3DDC97",
-    "negative": "#FF6B7D",
-    "warning": "#FFB703",
+    "dark_bg": "#192A3A",
+    "dark_bg_alt": "#22384A",
+    "dark_panel": "#243D50",
+    "dark_panel_soft": "#2D485C",
+    "dark_border": "#577083",
+    "dark_text": "#FFF9EE",
+    "dark_muted": "#D5D1C8",
+    "light_bg": "#F7F0E3",
+    "light_bg_alt": "#FFFDF8",
+    "light_panel": "#FFFDF8",
+    "light_panel_soft": "#EFE4D2",
+    "light_border": "#C9BBA7",
+    "light_text": "#263746",
+    "light_muted": "#5E6870",
+    "pink": "#8B2E3F",
+    "pink_strong": "#7A2638",
+    "cyan": "#396F8C",
+    "cyan_strong": "#285F7D",
+    "purple": "#A35B45",
+    "positive": "#2F765F",
+    "negative": "#A64B3C",
+    "warning": "#C48A24",
 }
 
 
@@ -162,7 +170,9 @@ def inject_css(dark_mode: bool) -> None:
     border = PALETTE["dark_border"] if dark_mode else PALETTE["light_border"]
     text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
     muted = PALETTE["dark_muted"] if dark_mode else PALETTE["light_muted"]
-    shadow = "0 18px 42px rgba(5, 8, 25, 0.28)" if dark_mode else "0 14px 36px rgba(11, 15, 47, 0.10)"
+    shadow = "0 10px 24px rgba(8, 19, 28, 0.24)" if dark_mode else "0 8px 20px rgba(69, 52, 34, 0.10)"
+    sidebar_bg = PALETTE["dark_bg_alt"] if dark_mode else PALETTE["light_bg_alt"]
+    sidebar_text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
     st.markdown(
         f"""
         <style>
@@ -174,17 +184,15 @@ def inject_css(dark_mode: bool) -> None:
             --border: {border};
             --text: {text};
             --muted: {muted};
-            --pink: {PALETTE["pink"]};
-            --pink-strong: {PALETTE["pink_strong"]};
-            --cyan: {PALETTE["cyan"]};
-            --cyan-strong: {PALETTE["cyan_strong"]};
-            --purple: {PALETTE["purple"]};
+            --oxblood: {PALETTE["pink_strong"]};
+            --blue: {PALETTE["cyan_strong"]};
+            --brick: {PALETTE["purple"]};
             --positive: {PALETTE["positive"]};
             --negative: {PALETTE["negative"]};
             --warning: {PALETTE["warning"]};
             --shadow: {shadow};
             --radius: 18px;
-            --content-width: 1480px;
+            --content-width: 1280px;
         }}
         html, body, [class*="css"] {{
             font-family: "Inter", "Segoe UI", sans-serif;
@@ -194,17 +202,13 @@ def inject_css(dark_mode: bool) -> None:
         }}
         .stApp {{
             color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(255,79,163,0.18), transparent 28%),
-                radial-gradient(circle at top right, rgba(63,214,255,0.16), transparent 24%),
-                linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+            background: var(--bg);
         }}
         [data-testid="stAppViewContainer"] > .main {{
             background: transparent;
         }}
         [data-testid="stHeader"] {{
-            background: transparent !important;
-            height: 0;
+            background: var(--bg) !important;
         }}
         #MainMenu, footer {{
             visibility: hidden;
@@ -215,22 +219,23 @@ def inject_css(dark_mode: bool) -> None:
             max-width: var(--content-width);
         }}
         [data-testid="stSidebar"] {{
-            background:
-                linear-gradient(180deg, rgba(27, 36, 92, 0.98), rgba(18, 24, 63, 0.98));
-            border-right: 1px solid rgba(255,255,255,0.08);
+            background: {sidebar_bg};
+            border-right: 1px solid var(--border);
+            width: 19rem !important;
         }}
         [data-testid="stSidebar"] * {{
-            color: #ffffff !important;
+            color: {sidebar_text} !important;
         }}
         [data-testid="stSidebarCollapseButton"] button {{
-            color: #ffffff !important;
+            color: {sidebar_text} !important;
         }}
         .signal-banner {{
             margin: 0 0 1rem 0;
             padding: 0.9rem 1rem;
             border-radius: 14px;
-            border: 1px solid rgba(255,255,255,0.16);
-            background: linear-gradient(90deg, rgba(255,79,163,0.16), rgba(63,214,255,0.14));
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--oxblood);
+            background: var(--panel-soft);
             color: var(--text);
             font-weight: 650;
             box-shadow: var(--shadow);
@@ -240,8 +245,6 @@ def inject_css(dark_mode: bool) -> None:
             border: 1px solid var(--border);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
         }}
         .hero-card {{
             padding: 1.35rem 1.35rem 1.2rem 1.35rem;
@@ -318,8 +321,8 @@ def inject_css(dark_mode: bool) -> None:
             display: inline-block;
             border-radius: 999px;
             padding: 0.25rem 0.7rem;
-            background: rgba(255,79,163,0.16);
-            border: 1px solid rgba(255,79,163,0.30);
+            background: var(--panel-soft);
+            border: 1px solid var(--oxblood);
             color: var(--text);
             font-size: 0.82rem;
             font-weight: 700;
@@ -352,7 +355,7 @@ def inject_css(dark_mode: bool) -> None:
             min-height: 44px;
             border-radius: 14px;
             border: 1px solid rgba(255,255,255,0.16);
-            background: linear-gradient(135deg, rgba(108,99,255,0.92), rgba(0,212,255,0.82));
+            background: var(--oxblood);
             color: #ffffff !important;
             font-weight: 750;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
@@ -370,18 +373,18 @@ def inject_css(dark_mode: bool) -> None:
             color: var(--text);
         }}
         [data-baseweb="tag"] {{
-            background: rgba(63,214,255,0.18) !important;
+            background: var(--panel-soft) !important;
             color: var(--text) !important;
         }}
         div[role="radiogroup"] > label {{
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: var(--panel-soft);
+            border: 1px solid var(--border);
             border-radius: 14px;
             padding: 0.42rem 0.5rem;
             margin-bottom: 0.45rem;
         }}
         div[role="radiogroup"] > label:hover {{
-            border-color: rgba(63,214,255,0.34);
+            border-color: var(--blue);
         }}
         div[role="radiogroup"] label p {{
             font-size: 0.95rem;
@@ -394,6 +397,14 @@ def inject_css(dark_mode: bool) -> None:
         }}
         .plotly-chart {{
             border-radius: 16px;
+            max-width: 100%;
+            overflow-x: auto;
+        }}
+        [data-testid="stHorizontalBlock"] {{
+            min-width: 0;
+        }}
+        [data-testid="stColumn"] {{
+            min-width: 0;
         }}
         @media (max-width: 1024px) {{
             .block-container {{
@@ -401,12 +412,32 @@ def inject_css(dark_mode: bool) -> None:
                 padding-right: 1rem !important;
             }}
         }}
-        @media (max-width: 768px) {{
+        @media (max-width: 820px) {{
             .block-container {{
-                padding-top: 0.7rem !important;
+                padding: 0.8rem 0.75rem 2rem !important;
             }}
             .hero-card {{
                 min-height: auto;
+                padding: 1rem;
+            }}
+            .signal-banner {{
+                font-size: 0.82rem;
+                padding: 0.7rem 0.8rem;
+            }}
+            [data-testid="stHorizontalBlock"] {{
+                flex-wrap: wrap;
+                gap: 0.75rem !important;
+            }}
+            [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {{
+                flex: 1 1 100% !important;
+                width: 100% !important;
+                min-width: 100% !important;
+            }}
+            [data-testid="stSidebar"] {{
+                max-width: 88vw;
+            }}
+            .stButton > button, .stDownloadButton > button {{
+                width: 100%;
             }}
         }}
         </style>
@@ -452,6 +483,12 @@ def load_artifacts() -> dict[str, pd.DataFrame]:
         "sector_sentiment_index": pd.read_csv(REQUIRED_ARTIFACTS["sector_sentiment_index"], parse_dates=["date"]),
         "sentiment_validation": pd.read_csv(REQUIRED_ARTIFACTS["sentiment_validation"]),
         "dual_domain_validation": pd.read_csv(REQUIRED_ARTIFACTS["dual_domain_validation"]),
+        "finance_validation_metrics": pd.read_csv(
+            REQUIRED_ARTIFACTS["finance_validation_metrics"]
+        ),
+        "finance_confusion_matrix": pd.read_csv(
+            REQUIRED_ARTIFACTS["finance_confusion_matrix"]
+        ),
         "finance_lexicon": pd.read_csv(REQUIRED_ARTIFACTS["finance_lexicon"]),
         "model_specification": pd.read_csv(REQUIRED_ARTIFACTS["model_specification"]),
         "asset_data_use_register": pd.read_csv(REQUIRED_ARTIFACTS["asset_data_use_register"]),
@@ -522,7 +559,8 @@ def sidebar_navigation(current_page: str, dark_mode: bool) -> tuple[str, bool]:
             help="Open every required SignalScope page from this navigation list.",
         )
         st.markdown("---")
-        st.caption("Local Streamlit entrypoint using the latest verified `results/` artefacts only.")
+        st.caption("Public source repository; app reads verified `results/` artefacts only.")
+        st.link_button("View public GitHub repository", PUBLIC_REPOSITORY_URL)
     return selected_page, dark_mode
 
 
@@ -546,13 +584,35 @@ def add_plot_layout(fig: go.Figure, dark_mode: bool, *, height: int = 420) -> go
     fig.update_layout(
         paper_bgcolor=colors["paper"],
         plot_bgcolor=colors["plot"],
-        font=dict(color=colors["text"]),
-        margin=dict(l=18, r=18, t=16, b=18),
+        font=dict(color=colors["text"], size=15),
+        margin=dict(l=72, r=34, t=28, b=72),
         height=height,
-        legend=dict(orientation="h", y=-0.2),
-        xaxis=dict(gridcolor=colors["grid"], zeroline=False),
-        yaxis=dict(gridcolor=colors["grid"], zeroline=False),
-        hoverlabel=dict(bgcolor="#12193F" if dark_mode else "#FFFFFF", font_color=colors["text"]),
+        legend=dict(
+            orientation="h",
+            y=-0.28,
+            x=0,
+            font=dict(size=14),
+            itemsizing="constant",
+        ),
+        xaxis=dict(
+            gridcolor=colors["grid"],
+            zeroline=False,
+            automargin=True,
+            title_font=dict(size=16),
+            tickfont=dict(size=14),
+        ),
+        yaxis=dict(
+            gridcolor=colors["grid"],
+            zeroline=False,
+            automargin=True,
+            title_font=dict(size=16),
+            tickfont=dict(size=14),
+        ),
+        hoverlabel=dict(
+            bgcolor=PALETTE["dark_bg"] if dark_mode else "#FFFDF8",
+            font_color=colors["text"],
+            font_size=15,
+        ),
     )
     return fig
 
@@ -621,7 +681,7 @@ def risk_return_chart(
     metrics: pd.DataFrame,
     dark_mode: bool,
     *,
-    height: int = 380,
+    height: int = 420,
     x_range: tuple[float, float] | None = None,
     y_range: tuple[float, float] | None = None,
 ) -> go.Figure:
@@ -635,7 +695,12 @@ def risk_return_chart(
                 mode="markers",
                 text=group["fund"],
                 name=family,
-                marker=dict(size=14, color=colors.get(family, PALETTE["cyan"]), opacity=0.84),
+                marker=dict(
+                    size=18,
+                    color=colors.get(family, PALETTE["cyan"]),
+                    opacity=0.9,
+                    line=dict(color=theme_colors(dark_mode)["text"], width=1.5),
+                ),
                 hovertemplate=(
                     "<b>%{text}</b><br>Volatility: %{x:.2f}%<br>Return: %{y:.2f}%"
                     "<br>Sharpe: %{customdata:.2f}<extra></extra>"
@@ -646,10 +711,66 @@ def risk_return_chart(
     fig.update_xaxes(title="Annualised volatility (%)")
     fig.update_yaxes(title="Annualised return (%)")
     if x_range is not None:
-        fig.update_xaxes(range=list(x_range))
+        fig.update_xaxes(range=list(x_range), dtick=2)
     if y_range is not None:
-        fig.update_yaxes(range=list(y_range))
+        fig.update_yaxes(range=list(y_range), dtick=2 if y_range[1] <= 25 else 5)
     return add_plot_layout(fig, dark_mode, height=height)
+
+
+def render_risk_return_zoom_views(
+    metrics: pd.DataFrame,
+    dark_mode: bool,
+) -> None:
+    """Render readable full-width detail views without permanent point labels."""
+    clusters = [
+        (
+            "Lower-volatility detail",
+            metrics.loc[metrics["family"] != "Crypto"].copy(),
+            (10, 23),
+            (4, 17),
+            "Equity and combined funds are separated here because the full-universe scale compresses them.",
+        ),
+        (
+            "Higher-volatility cryptocurrency detail",
+            metrics.loc[metrics["family"] == "Crypto"].copy(),
+            (68, 83),
+            (30, 63),
+            "Crypto funds remain on their native high-risk scale; hover over a marker for its full name.",
+        ),
+    ]
+    for heading, cluster, x_range, y_range, explanation in clusters:
+        if cluster.empty:
+            continue
+        st.markdown(f'<div class="section-title">{heading}</div>', unsafe_allow_html=True)
+        st.caption(explanation)
+        st.plotly_chart(
+            risk_return_chart(
+                cluster,
+                dark_mode,
+                height=430,
+                x_range=x_range,
+                y_range=y_range,
+            ),
+            width="stretch",
+        )
+        detail = cluster[
+            ["fund", "annualised_volatility", "annualised_return", "sharpe_ratio"]
+        ].copy()
+        detail["annualised_volatility"] = detail["annualised_volatility"].map(fmt_pct)
+        detail["annualised_return"] = detail["annualised_return"].map(fmt_pct)
+        detail["sharpe_ratio"] = detail["sharpe_ratio"].map(fmt_ratio)
+        st.dataframe(
+            detail.rename(
+                columns={
+                    "fund": "Fund",
+                    "annualised_volatility": "Volatility",
+                    "annualised_return": "Return",
+                    "sharpe_ratio": "Sharpe ratio",
+                }
+            ),
+            width="stretch",
+            hide_index=True,
+        )
 
 
 def holdings_bar_chart(holdings: pd.DataFrame, dark_mode: bool, *, height: int = 430) -> go.Figure:
@@ -840,8 +961,12 @@ def allocation_builder(
         st.warning("At least one selected fund must have a non-zero allocation.")
         return
     allocations = {fund: weight / total for fund, weight in raw_weights.items() if weight > 0}
-    _contributions, series = app_logic.allocation_series(fund_returns, allocations)
-    allocation_metrics = app_logic.allocation_metrics(series)
+    contributions, series = app_logic.allocation_series(fund_returns, allocations)
+    selected_families = set(
+        metrics.loc[metrics["fund"].isin(allocations), "family"]
+    )
+    periods_per_year = 365 if selected_families == {"Crypto"} else 252
+    allocation_metrics = app_logic.allocation_metrics(series, periods_per_year)
 
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Annualised return", fmt_pct(allocation_metrics["Return"]))
@@ -861,6 +986,18 @@ def allocation_builder(
         legend=dict(orientation="h", y=-0.2),
     )
     st.plotly_chart(add_plot_layout(fig, dark_mode, height=360), width="stretch")
+    audit = app_logic.allocation_export(contributions, series)
+    st.download_button(
+        "Download allocation audit CSV",
+        data=audit.to_csv(index=False).encode("utf-8"),
+        file_name="signalscope_allocation_audit.csv",
+        mime="text/csv",
+        help="Download date-level fund contributions, portfolio return, growth and drawdown.",
+    )
+    st.caption(
+        f"Annualisation uses {periods_per_year} periods because the scenario "
+        + ("contains only crypto funds." if periods_per_year == 365 else "uses the equity decision calendar.")
+    )
     st.warning(
         "Duplicate underlying exposures are likely because the offered funds share many of the same assets. "
         "This page does not claim holdings-overlap percentages and does not simulate live trading."
@@ -928,21 +1065,30 @@ def render_overview(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:
     st.caption("Historical growth of $1 after the 10 bps turnover-cost assumption. Dates remain out-of-sample live dates only.")
 
     st.markdown('<div class="section-title">Risk-return comparison across all ten funds</div>', unsafe_allow_html=True)
-    st.plotly_chart(risk_return_chart(metrics, dark_mode, height=390), width="stretch")
+    st.plotly_chart(risk_return_chart(metrics, dark_mode, height=460), width="stretch")
     st.caption("Combined Risk Parity is the strongest balanced anchor in this sample, while Crypto Minimum Variance earns the highest Sharpe ratio with materially larger downside risk.")
-    z1, z2 = st.columns(2, gap="large")
-    with z1:
-        st.markdown('<div class="section-title">Zoom: lower-volatility cluster</div>', unsafe_allow_html=True)
-        st.plotly_chart(
-            risk_return_chart(metrics, dark_mode, height=300, x_range=(8, 24), y_range=(4, 20)),
-            width="stretch",
-        )
-    with z2:
-        st.markdown('<div class="section-title">Zoom: higher-volatility crypto cluster</div>', unsafe_allow_html=True)
-        st.plotly_chart(
-            risk_return_chart(metrics, dark_mode, height=300, x_range=(68, 82), y_range=(30, 63)),
-            width="stretch",
-        )
+    render_risk_return_zoom_views(metrics, dark_mode)
+
+    st.markdown('<div class="section-title">Decision Studio</div>', unsafe_allow_html=True)
+    objective = st.selectbox(
+        "Historical objective",
+        [
+            "Diversified balance",
+            "Capital stability",
+            "Transparent simplicity",
+            "Maximum historical growth",
+            "Sentiment research",
+        ],
+        help="This educational selector maps an objective to historical evidence. It does not provide personal advice.",
+    )
+    candidate, evidence, drawback = app_logic.objective_candidate(metrics, objective)
+    d1, d2, d3, d4 = st.columns(4)
+    d1.metric("Historical candidate", candidate["fund"])
+    d2.metric("Return", fmt_pct(candidate["annualised_return"]))
+    d3.metric("Volatility", fmt_pct(candidate["annualised_volatility"]))
+    d4.metric("Maximum drawdown", fmt_pct(candidate["maximum_drawdown"]))
+    st.success(f"Evidence used: {evidence}")
+    st.warning(f"What could invalidate the choice: {drawback}")
 
     c1, c2 = st.columns(2, gap="large")
     with c1:
@@ -1028,19 +1174,10 @@ def render_compare_funds(data: dict[str, pd.DataFrame], dark_mode: bool) -> None
     if chosen_funds:
         st.plotly_chart(growth_chart(fund_returns, chosen_funds, dark_mode), width="stretch")
         st.plotly_chart(drawdown_chart(fund_returns, chosen_funds, dark_mode), width="stretch")
-    st.plotly_chart(risk_return_chart(filtered, dark_mode), width="stretch")
+    st.markdown('<div class="section-title">Full-universe risk-return view</div>', unsafe_allow_html=True)
+    st.plotly_chart(risk_return_chart(filtered, dark_mode, height=460), width="stretch")
     if len(filtered) > 4:
-        z1, z2 = st.columns(2, gap="large")
-        with z1:
-            st.plotly_chart(
-                risk_return_chart(filtered, dark_mode, height=300, x_range=(8, 24), y_range=(4, 20)),
-                width="stretch",
-            )
-        with z2:
-            st.plotly_chart(
-                risk_return_chart(filtered, dark_mode, height=300, x_range=(68, 82), y_range=(30, 63)),
-                width="stretch",
-            )
+        render_risk_return_zoom_views(filtered, dark_mode)
     with st.expander("Metric definitions and disclosures"):
         st.markdown(
             """
@@ -1109,6 +1246,7 @@ def render_fact_sheet(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:
             unsafe_allow_html=True,
         )
         st.warning(fact_sheet_warning(row))
+        st.info(app_logic.fact_sheet_interpretation(row, metrics))
     with summary_right:
         st.metric("Turnover", f"{float(row['total_turnover']):.2f}")
         st.metric("Top-five concentration", fmt_pct(concentration))
@@ -1185,6 +1323,8 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     sector_index = data["sector_sentiment_index"].copy()
     sentiment_validation = data["sentiment_validation"].copy()
     dual_domain = data["dual_domain_validation"].copy()
+    finance_metrics = data["finance_validation_metrics"].copy()
+    finance_confusion = data["finance_confusion_matrix"].copy()
     finance_lexicon = data["finance_lexicon"].copy()
     fusion = data["fusion_comparison"].copy()
     checks = data["sentiment_product_app_checks"].copy()
@@ -1211,7 +1351,7 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
             <div class="section-copy">
                 Standard VADER is the baseline rule-based model. The finale adds a transparent
                 18-term finance lexicon, keeps a neutral no-news treatment alongside an observed-only
-                sensitivity comparison, lags tradable sentiment by one equity trading day, and applies
+                sensitivity comparison, applies a one-trading-day lag to tradable sentiment, and applies
                 the signal only to equities because the supplied crypto dataset is price-only.
             </div>
         </div>
@@ -1224,6 +1364,25 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     m2.metric("Baseline neutral share", fmt_pct(sentiment_validation.loc[sentiment_validation["diagnostic"] == "baseline_neutral_share", "value"].iloc[0]))
     m3.metric("Augmented neutral share", fmt_pct(sentiment_validation.loc[sentiment_validation["diagnostic"] == "finance_augmented_neutral_share", "value"].iloc[0]))
     m4.metric("Sign-changed share", fmt_pct(sentiment_validation.loc[sentiment_validation["diagnostic"] == "sign_changed_share", "value"].iloc[0]))
+
+    snapshot = app_logic.latest_sector_snapshot(sector_index)
+    snapshot_show = snapshot[["sector", "smoothed_sentiment", "smoothed_coverage"]].copy()
+    snapshot_show["smoothed_sentiment"] = snapshot_show["smoothed_sentiment"].map(
+        lambda value: f"{value:+.3f}"
+    )
+    snapshot_show["smoothed_coverage"] = snapshot_show["smoothed_coverage"].map(fmt_pct)
+    with st.expander("Latest 21-trading-day sector snapshot", expanded=False):
+        st.dataframe(
+            snapshot_show.rename(
+                columns={
+                    "sector": "Sector",
+                    "smoothed_sentiment": "Smoothed sentiment",
+                    "smoothed_coverage": "Average ticker coverage",
+                }
+            ),
+            width="stretch",
+            hide_index=True,
+        )
 
     sectors = sorted(sector_index["sector"].unique())
     selected_sectors = st.multiselect("Sectors", sectors, default=sectors[:4], help="Compare sector-level sentiment and coverage using the precomputed finale artefacts.")
@@ -1260,8 +1419,65 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
             "The sentiment fund remains highly correlated with Equity Minimum Variance. The historical improvement is modest and does not establish independent return generation."
         )
 
-    st.markdown('<div class="section-title">Dual-domain validation</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Finance holdout validation</div>', unsafe_allow_html=True)
+    overall = finance_metrics.loc[finance_metrics["class"] == "overall"].copy()
+
+    def finance_value(model: str, metric: str) -> float:
+        return float(
+            overall.loc[
+                (overall["model"] == model) & (overall["metric"] == metric),
+                "value",
+            ].iloc[0]
+        )
+
+    standard_accuracy = finance_value("standard_vader", "accuracy")
+    augmented_accuracy = finance_value("finance_augmented_vader", "accuracy")
+    standard_macro_f1 = finance_value("standard_vader", "macro_f1")
+    augmented_macro_f1 = finance_value("finance_augmented_vader", "macro_f1")
+    kappa = finance_value("reviewer_agreement", "cohens_kappa")
+    v1, v2, v3, v4 = st.columns(4)
+    v1.metric("Internally labelled headlines", "1,000")
+    v2.metric("Reviewer agreement κ", f"{kappa:.3f}")
+    v3.metric(
+        "Augmented accuracy",
+        f"{augmented_accuracy:.1%}",
+        f"{(augmented_accuracy - standard_accuracy) * 100:+.1f} percentage points",
+    )
+    v4.metric(
+        "Augmented macro-F1",
+        f"{augmented_macro_f1:.3f}",
+        f"{augmented_macro_f1 - standard_macro_f1:+.3f}",
+    )
+    class_metrics = finance_metrics.loc[
+        finance_metrics["class"].isin(["Positive", "Neutral", "Negative"])
+    ].pivot_table(index=["model", "class"], columns="metric", values="value").reset_index()
+    for column in ["precision", "recall", "f1"]:
+        class_metrics[column] = class_metrics[column].map(lambda value: f"{value:.3f}")
+    st.dataframe(
+        class_metrics.rename(
+            columns={
+                "model": "Model",
+                "class": "Class",
+                "precision": "Precision",
+                "recall": "Recall",
+                "f1": "F1",
+            }
+        ),
+        width="stretch",
+        hide_index=True,
+    )
+    augmented_confusion = finance_confusion.loc[
+        finance_confusion["model"] == "finance_augmented_vader"
+    ].pivot(index="actual", columns="predicted", values="count")
+    st.caption("Finance-augmented VADER confusion matrix; rows are actual labels and columns are predicted labels.")
+    st.dataframe(augmented_confusion, width="stretch")
+    st.warning(
+        "The 1,000-headline holdout is separately held and internally human-labelled. It is useful internal evidence, not independent expert or commercial validation. Classification performance does not prove return predictability."
+    )
+
+    st.markdown('<div class="section-title">Separate movie-language validation</div>', unsafe_allow_html=True)
     dual_show = dual_domain.copy()
+    dual_show = dual_show.loc[dual_show["domain"] == "Movie reviews (NLTK binary)"]
     dual_show["accuracy"] = dual_show["accuracy"].replace("", np.nan)
     dual_show["macro_f1"] = dual_show["macro_f1"].replace("", np.nan)
     dual_show["Accuracy"] = dual_show["accuracy"].map(lambda value: "—" if pd.isna(value) else f"{float(value):.3f}")
@@ -1279,9 +1495,7 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
         width="stretch",
         hide_index=True,
     )
-    st.warning(
-        "Classification performance does not prove return predictability. Expert-labelled finance validation remains absent, so the finance lexicon cannot be presented as commercially validated."
-    )
+    st.caption("The movie-review check tests general-language non-degradation only. It does not validate financial forecasting or the Movie-to-Market event study.")
     with st.expander("Transparent 18-term finance lexicon"):
         st.dataframe(finance_lexicon.rename(columns={"term": "Term", "assigned_score": "Assigned score", "status": "Status"}), width="stretch", hide_index=True)
 
@@ -1420,16 +1634,51 @@ def render_methodology(data: dict[str, pd.DataFrame], support_text: dict[str, st
 
     st.dataframe(spec.rename(columns={"parameter": "Decision", "value": "Setting", "reason": "Reason"}), width="stretch", hide_index=True)
 
+    st.markdown('<div class="section-title">Models, equations and symbol guide</div>', unsafe_allow_html=True)
+    with st.expander("1. Asset return and net portfolio return", expanded=True):
+        st.latex(r"r_{i,t}=\frac{P_{i,t}}{P_{i,t-1}}-1\,;")
+        st.markdown(
+            "Here, `rᵢ,ₜ` is asset *i*'s return on date *t*; `Pᵢ,ₜ` is its adjusted close on date *t*; and `Pᵢ,ₜ₋₁` is the preceding adjusted close."
+        )
+        st.latex(r"r^{net}_{p,t}=\sum_{i=1}^{N}w_{i,t-1}r_{i,t}-c\tau_t\,;")
+        st.markdown(
+            "Here, `rᵖⁿᵉᵗ,ₜ` is the fund's net return; `N` is the number of assets; `wᵢ,ₜ₋₁` is the prior target weight; `rᵢ,ₜ` is the asset return; `c` is 0.001, or 10 bps; and `τₜ` is one-way turnover."
+        )
+    with st.expander("2. Covariance shrinkage and minimum variance"):
+        st.latex(r"\widehat{\Sigma}_{\lambda}=(1-\lambda)\widehat{\Sigma}+\lambda\operatorname{diag}(\widehat{\Sigma})\,,\quad \lambda=0.10\,;")
+        st.markdown(
+            "Here, `Σ̂` is the sample covariance matrix; `diag(Σ̂)` keeps only its variances; and `λ` is the fixed 10% shrinkage strength used to reduce unstable off-diagonal estimates."
+        )
+        st.latex(r"\min_{w}\;w^{\top}\widehat{\Sigma}_{\lambda}w\quad\text{s.t.}\quad\mathbf{1}^{\top}w=1\,,\;0\leq w_i\leq u_i\,.")
+        st.markdown(
+            "Here, `w` is the weight vector; `wᵀΣ̂λw` is portfolio variance; `1ᵀw = 1` makes weights sum to 100%; and `uᵢ` is the asset-specific upper cap."
+        )
+    with st.expander("3. Inverse-volatility risk parity"):
+        st.latex(r"w_i=\frac{\sigma_i^{-1}}{\sum_{j=1}^{N}\sigma_j^{-1}}\,;")
+        st.markdown(
+            "Here, `σᵢ` is asset *i*'s estimated volatility; `σᵢ⁻¹` is inverse volatility; and the denominator normalises all weights to sum to 100%. This is inverse-volatility risk parity. It is not full-covariance equal-risk-contribution optimisation."
+        )
+    with st.expander("4. Annualised Sharpe ratio"):
+        st.latex(r"SR=\frac{\overline{r}}{s_r}\sqrt{A}\,;")
+        st.markdown(
+            "Here, `SR` is the historical Sharpe ratio; `r̄` is mean daily net return; `sᵣ` is its sample standard deviation; and `A` is 252 for equity or combined funds and 365 for crypto-only funds. The permitted risk-free rate is 0%."
+        )
+    with st.expander("5. Reliability-gated sentiment multiplier"):
+        st.latex(r"m_{i,t}=\operatorname{clip}\!\left(1+\alpha s_{i,t-1}q_{i,t-1},\,m_{\min},\,m_{\max}\right)\,;")
+        st.markdown(
+            "Here, `mᵢ,ₜ` is the equity weight multiplier; `α` controls tilt strength; `sᵢ,ₜ₋₁` is lagged finance-augmented VADER sentiment; `qᵢ,ₜ₋₁` is lagged reliability; and `mₘᵢₙ` and `mₘₐₓ` cap the change. The adjusted weights are renormalised and recapped."
+        )
+
     c1, c2 = st.columns(2, gap="large")
     with c1:
         st.markdown('<div class="section-title">Sentiment and leakage controls</div>', unsafe_allow_html=True)
         st.markdown(
             """
             - Sentiment is aligned to the next equity trading day before any tradable use.
-            - The investable sentiment signal is lagged one equity trading day.
+            - The investable sentiment signal uses a one-trading-day lag.
             - No same-day headline leakage is allowed.
             - The app does not rerun the backtest or download external data during normal rendering.
-            - A 1,000-headline human-labelled finance holdout is now available, with very high reviewer agreement and modest improvement from the finance-augmented lexicon over standard VADER.
+            - A separately held, internally human-labelled 1,000-headline finance set shows very high reviewer agreement and modest classification improvement from the finance-augmented lexicon over Standard VADER.
             """
         )
     with c2:
@@ -1449,9 +1698,10 @@ def render_methodology(data: dict[str, pd.DataFrame], support_text: dict[str, st
         st.dataframe(audit, width="stretch", hide_index=True)
 
     st.markdown('<div class="section-title">Publication status and student-controlled actions</div>', unsafe_allow_html=True)
-    st.info(
-        "The package remains local until the student personally verifies citations, approves the interpretation in their own voice, and later creates the public GitHub repository and Streamlit deployment."
-    )
+    p1, p2 = st.columns(2)
+    p1.success("Public GitHub repository: complete and independently observed.")
+    p1.link_button("Open Project B repository", PUBLIC_REPOSITORY_URL)
+    p2.warning("Live Streamlit URL and signed-out deployment test: not yet evidenced.")
     with st.expander("Student finalisation requirements"):
         st.markdown(support_text["student_finalisation"])
     with st.expander("Citation verification requirements"):
@@ -1524,7 +1774,7 @@ def main() -> None:
 
     st.markdown("---")
     st.caption(
-        f"{BRAND} | {TAGLINE} | Local academic prototype using precomputed finale artefacts only."
+        f"{BRAND} | {TAGLINE} | Public-source academic prototype using precomputed finale artefacts only."
     )
 
 
