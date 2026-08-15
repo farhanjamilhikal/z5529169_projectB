@@ -776,10 +776,13 @@ def risk_return_chart(
                 text=group["fund"],
                 name=family,
                 marker=dict(
-                    size=18,
+                    size=13,
                     color=colors.get(family, accent("cyan", dark_mode)),
-                    opacity=0.9,
-                    line=dict(color=theme_colors(dark_mode)["text"], width=1.5),
+                    opacity=0.78,
+                    line=dict(
+                        color=PALETTE["dark_bg"] if dark_mode else PALETTE["light_bg"],
+                        width=1.5,
+                    ),
                 ),
                 hovertemplate=(
                     "<b>%{text}</b><br>Volatility: %{x:.2f}%<br>Return: %{y:.2f}%"
