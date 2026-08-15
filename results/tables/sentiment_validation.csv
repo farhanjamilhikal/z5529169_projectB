@@ -1,0 +1,5 @@
+diagnostic,value,interpretation
+baseline_neutral_share,0.488456037594497,Share of headlines scored exactly zero by standard VADER
+finance_augmented_neutral_share,0.46833753320166177,Share scored zero after the transparent finance lexicon
+sign_changed_share,0.02483824831437717,Share whose sign changes after finance augmentation
+mean_no_news_rule_difference,0.03563439629839603,Mean absolute sector-index difference: neutral-fill versus observed-only

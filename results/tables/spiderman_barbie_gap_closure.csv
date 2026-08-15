@@ -1,0 +1,20 @@
+area,item_range,required_evidence,current_evidence,status,owner,next_action
+Sentiment,S1-S6,Per-review star values and predeclared mappings,Current IMDb aggregate rating only,BLOCKED_DATA,Student plus licensed data source,Obtain legitimate dated star-labelled review CSV or retain Not Applicable
+Sentiment,S7-S10,Expert finance labels and annotator records,No expert-labelled holdout,BLOCKER,Student or qualified annotator,Create blind labelled holdout without using model predictions
+Sentiment,S11-S17,Metadata definitions and overlapping tags,Two films and exposure roles are explicitly tagged,DOCUMENTED,Project,Retain tags as metadata only
+Sentiment,S18,Review date and country,Not available in IMDb aggregate data,BLOCKED_DATA,Licensed review provider,Collect only under valid terms
+Sentiment,S19-S20,Viewer preferences and subgroup evaluation,Excluded from model,NOT_APPLICABLE,Project,Do not invent preferences
+Sentiment,S21-S23,Licence and no-prohibited-scraping controls,IMDb and TMDb routes documented; platform scraping excluded,PARTIAL_STUDENT_DECLARATION,Student,Personally review licence terms
+Sentiment,S24-S28,Film-level dedupe split and subgroup counts,No film-specific review-text panel,BLOCKED_DATA,Licensed review provider,Run only when valid data exist
+Sentiment,S29-S34,Identical-example VADER comparison and core metrics,2000 NLTK movie reviews with accuracy and macro-F1,IMPLEMENTED,Project,Preserve existing validation
+Sentiment,S35-S37,Class metrics confusion matrix and error audit for new two-film sample,No labelled two-film sample,BLOCKED_DATA,Project plus student reviewer,Generate only after valid labels exist
+Sentiment,S38,General-domain non-degradation,Accuracy unchanged at 0.635 and macro-F1 change -0.000472,IMPLEMENTED,Project,Retain modest claim
+Sentiment,S39-S40,Expert-finance improvement and retain/reject gate,Predeclared gate but no expert holdout,BLOCKER,Student or qualified annotator,Do not claim commercial validation
+Sentiment,S41-S51,Domain separation and investment boundaries,Documentation app warnings and lagged portfolio test,IMPLEMENTED,Project,Preserve
+Sentiment,S52-S54,App explanation label definitions coverage and reliability,Implemented in News sentiment and Movie-to-market views,IMPLEMENTED,Project,Test app journey
+Sentiment,S55,Observed subgroup failure disclosure,No valid subgroups measured,NOT_MEASURED,Project,Disclose any future measured failure
+Sentiment,S56-S60,Predeclared gates rule-extension language and final direction,Thresholds and direction documented,IMPLEMENTED,Project,Do not retune thresholds
+Week10,W1-W28,Required funds exhibits sentiment and app evidence,Existing verified Project B artifacts,IMPLEMENTED,Project,Keep movie lab secondary
+Week10,W29,Public repository live app and accessibility,Not published,STUDENT_ACTION,Student,Publish only under explicit instruction
+Week10,W30,Truthful final prompt logs,Existing logs require student approval,STUDENT_ACTION,Student,Review and approve truthfully
+Crypto,C2 C1-C20,Ten-asset universe floor sensitivity and preferred fund,Existing verified crypto-sleeve evidence,IMPLEMENTED,Project,Do not change because of movie lab

@@ -1,0 +1,21 @@
+risk,area,current_mitigation,residual_severity,next_control,status
+Look-ahead bias,Model,Past-only estimation; first live date after window,Low,Retest whenever timing code changes,Controlled
+Calendar mismatch,Model,Native 365-day crypto returns before equity-calendar alignment,Low,Keep calendar regression tests,Controlled
+Covariance instability,Model,"10% diagonal shrinkage, long-only caps",Medium,Test alternative shrinkage and windows,Partial
+Concentration,Portfolio,20%/30%/15% caps; holdings disclosed,Medium,Add sector and asset-class risk budgets,Partial
+Turnover and costs,Portfolio,Monthly rebalance and 10 bps one-way cost,Medium,"Stress spreads, impact, tax and fees",Partial
+Tail loss,Portfolio,"Drawdown figures, crypto warnings and objective trade-offs",High,Set predeclared drawdown governance triggers,Partial
+Sentiment timing leakage,Sentiment,Next-trading-day mapping plus one further trading-day lag,Low,Retain lag equality test,Controlled
+False-neutral language,Sentiment,Transparent 18-term finance lexicon and neutral-share check,Medium,Human-label a sector-stratified sample,Partial
+No-news bias,Sentiment,Neutral primary rule plus observed-only sensitivity,Medium,Monitor coverage by sector and regime,Partial
+Missing publisher metadata,Sentiment,Publisher completeness reduces reliability gate,Medium,Improve source metadata and provenance,Partial
+Sentiment overclaim,Product,Non-causal wording and before-after evidence,Medium,Predeclare later hypotheses and holdouts,Partial
+User metric confusion,App,"Definitions, fact-sheet interpretation and Decision Studio drawback",Medium,Conduct comprehension testing,Partial
+Fund overlap,App,Allocation lab warns about duplicated holdings,Medium,Add overlap and marginal-risk analytics,Partial
+App resource failure,Technology,Precomputed CSV architecture and smoke tests,Low,Verify cloud deployment later,Controlled
+Data defects,Data,"Duplicate, missing, OHLC and extreme-return audits",Medium,Add alerts on future data drift,Partial
+Short sample and regime risk,Evidence,Three-year limitation disclosed,High,Add later data and rolling subperiod tests,Open
+Execution and capacity,Operations,No client trading is enabled,High,"Broker, liquidity, capacity and incident design",Blocker
+Crypto custody,Operations,Prototype retains no client assets,High,Qualified custody and venue due diligence,Blocker
+Advice and product regulation,Governance,Educational-only positioning,High,Obtain qualified advice and licensed pathway,Blocker
+Commercial demand,Market,Target routes and value proposition documented,High,Interview users and test willingness to pay,Blocker

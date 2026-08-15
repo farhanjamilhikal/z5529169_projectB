@@ -1,0 +1,23 @@
+check,observed,interpretation,status
+Scored headline coverage,146830,"146,830 usable unique headlines",PASS
+Sector index completeness,10060,"10,060 rows across ten sectors",PASS
+Baseline exact-neutral share,0.488456037594497,48.85%; discloses VADER limitation,PASS
+Augmented exact-neutral share,0.4683375332016617,46.83%; targeted change only,PASS
+Finance lexicon sign-change share,0.0248382483143771,2.48%; not claimed as wholesale improvement,PASS
+No-news sensitivity,0.035634396298396,Observed-only comparison retained,PASS
+No-news neutral rule,1.0,All no-news ticker-days should equal zero,PASS
+Tradable sentiment lag,0.0,Must equal the prior ticker trading-day score,PASS
+Reliability lag,0.0,Must equal prior ticker trading-day reliability,PASS
+Coverage bounds,0.00 to 1.00,Coverage remains within zero and one,PASS
+Fusion annualised-return change,0.0052107748043139016,Positive but modest and non-causal,PASS
+Fusion Sharpe change,0.03884053016243283,Positive but requires further validation,PASS
+App sentiment journey,True,Dedicated sentiment view,PASS
+App coverage disclosure,True,Coverage shown beside sentiment,PASS
+App lag disclosure,True,Look-ahead control explained,PASS
+App non-causality warning,True,Prevents an unsupported causal claim,PASS
+App objective trade-off,True,Decision Studio always shows a drawback,PASS
+General-language non-degradation,0.0,Predeclared gate: movie-review accuracy deterioration must not exceed 0.01,PASS
+Expert-labelled finance benchmark,REQUIRED BEFORE COMMERCIAL USE,Required before commercial sentiment claims,BLOCKER
+Predeclared general-domain gate,Accuracy deterioration <= 0.01; macro-F1 deterioration <= 0.01; no class-recall deterioration > 0.05,Set before any film-specific validation data are inspected,PASS
+Predeclared finance-domain gate,Macro-F1 improvement >= 0.02 and no class-recall deterioration > 0.05,Test on a licensed expert-labelled holdout before commercial retention,BLOCKER
+Movie-to-market app explanation,True,"App explains domain separation, timing, exposure and non-causality",PASS

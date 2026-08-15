@@ -1,0 +1,5 @@
+domain,model,observations,accuracy,macro_f1,neutral_prediction_share,status,limitation
+Movie reviews (NLTK binary),Standard VADER,2000,0.635,0.6213499826310189,0.0005,MEASURED,"Binary positive/negative labels only; no star rating, platform, franchise, cast or preference metadata"
+Movie reviews (NLTK binary),Finance-augmented VADER,2000,0.635,0.6208780878960396,0.0,MEASURED,"Binary positive/negative labels only; no star rating, platform, franchise, cast or preference metadata"
+Movie reviews (star-labelled),Not run,0,,,,AWAITING LEGITIMATE DATA,"Set MOVIE_VALIDATION_CSV; preferences are subgroup tags, not labels"
+Finance (expert-labelled),Not run,0,,,,REQUIRED BEFORE COMMERCIAL USE,Set FINANCE_VALIDATION_CSV to a licensed benchmark or student-labelled holdout

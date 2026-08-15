@@ -1,0 +1,5 @@
+film,company,ticker,channel,course_universe,portfolio_status,evidence_source_ids,confidence
+Spider-Man: No Way Home,Sony Group Corporation,SONY,Columbia Pictures studio and theatrical economics,No,External research-lab primary exposure,S01;S02,High
+Spider-Man: No Way Home,The Walt Disney Company,DIS,Marvel/IP and co-finance context,Yes,Context only; exposure is not isolated in course data,S05,Medium
+Barbie,"Mattel, Inc.",MAT,Barbie IP owner and Mattel Films producer,No,External research-lab primary exposure,S06;S07;S08,High
+Barbie,"Warner Bros. Discovery, Inc.",WBD,Worldwide theatrical distribution,No,External research-lab secondary exposure,S09;S10;S11,High

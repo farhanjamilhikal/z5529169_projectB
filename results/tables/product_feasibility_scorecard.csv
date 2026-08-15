@@ -1,0 +1,10 @@
+dimension,weight_pct,score_out_of_5,evidence,residual_gap,gate,weighted_points
+Technical reliability,15,5,"Pipeline, tests and app views run",Maintain on another machine,Ready,15.0
+Data governance,10,4,Field-use register and integrity audits,Publisher metadata is often missing,Ready with caveat,8.0
+Portfolio model,15,4,"Past-only OOS funds, caps and costs",Only three live years,Ready with caveat,12.0
+Sentiment model,10,3,"Lag, no-news sensitivity and fusion test",No human-labelled accuracy benchmark,Validate,6.0
+Investor experience,10,5,Six-view journey and downloadable audit,Needs external user testing,Ready with caveat,10.0
+Differentiation,10,3,Evidence trail and reliability-gated fusion,No proprietary data or durable moat,Validate,6.0
+Commercial evidence,10,1,Target segment and routes proposed,No willingness-to-pay or retention evidence,Blocker,2.0
+Execution and operations,10,1,Monthly target weights are produced,"No broker, custody, capacity or incident process",Blocker,2.0
+Regulatory readiness,10,1,Educational boundary disclosed,"No licensed advice, dealing or scheme pathway",Blocker,2.0

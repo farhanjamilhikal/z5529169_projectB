@@ -1,0 +1,14 @@
+dataset,field,role,justification
+equity_prices,ticker,Model input / identifier,"Defines assets, holdings and per-asset calculations"
+equity_prices,date,Model timing,"Controls ordering, estimation windows and no-look-ahead application"
+equity_prices,adjClose,Model input,Creates total-return-adjusted daily returns
+equity_prices,"open, high, low, close",Diagnostic,Checks OHLC consistency and documents intraday price range
+equity_prices,volume,Diagnostic / product disclosure,Measures trading activity; not treated as a return predictor
+equity_prices,sector,Model grouping,Defines equity universe reporting and sector sentiment aggregation
+crypto_prices,"ticker, date, adjClose",Model input,Creates seven-day crypto returns before calendar alignment
+crypto_prices,"open, high, low, close, volume",Diagnostic,Checks source integrity and describes market activity
+news_headlines,title,Sentiment model input,"Scored without stripping punctuation, casing or negation"
+news_headlines,date,Model timing,Mapped to the next equity trading day then lagged one trading day
+news_headlines,"ticker, sector",Model grouping,Builds ticker-day signals and equal-weight sector indices
+news_headlines,publisher,Reliability diagnostic,Measures publisher completeness and diversity
+news_headlines,url,Provenance / audit,Retained for traceability; never used as a predictor

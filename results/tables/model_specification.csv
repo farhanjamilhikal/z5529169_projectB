@@ -1,0 +1,8 @@
+parameter,value,reason
+Risk-free rate,0%,Permitted course assumption; used consistently for Sharpe ratios
+Rebalancing,First observed day of each month,Monthly implementation with past-only estimation
+Estimation window,252 equity/combined; 365 crypto observations,One native-calendar year
+Constraints,"Long-only; 20% equity, 30% crypto, 15% combined cap",Limits concentration while remaining feasible
+Transaction costs,10 bps per unit of one-way turnover,Tests implementation drag beyond the zero-cost baseline
+No-news rule,Neutral zero; observed-only sensitivity also reported,Separates absent coverage from measured tone
+Sentiment timing,One equity trading-day lag,Prevents same-day headline look-ahead

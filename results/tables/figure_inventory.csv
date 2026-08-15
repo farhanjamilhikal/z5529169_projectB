@@ -1,0 +1,8 @@
+figure,purpose,exists,width_px,height_px,file_kb,report_caption,caption_present,status
+growth_of_one_comparison.png,Growth of $1 across fund families,True,3273,1109,508.3,Figure 1.,True,PASS
+fund_drawdowns.png,Minimum-variance drawdowns,True,2507,1121,268.0,Figure 2.,True,PASS
+combined_weights_over_time.png,Combined target weights over time,True,2612,2418,275.3,Figure 3.,True,PASS
+sector_sentiment_index.png,Ten-sector sentiment index,True,2828,2862,734.7,Figure 4.,True,PASS
+fusion_before_after.png,Fusion before and after,True,2509,1627,442.7,Figure 5.,True,PASS
+risk_return_across_funds.png,Risk-return comparison,True,2271,1297,129.5,Figure 6.,True,PASS
+crypto_sleeve_floor_sensitivity.png,Minimum-variance crypto-sleeve floor sensitivity,True,2070,1148,175.2,Figure 7.,True,PASS
