@@ -617,7 +617,14 @@ def drawdown_chart(
     return add_plot_layout(fig, dark_mode, height=height)
 
 
-def risk_return_chart(metrics: pd.DataFrame, dark_mode: bool, *, height: int = 380) -> go.Figure:
+def risk_return_chart(
+    metrics: pd.DataFrame,
+    dark_mode: bool,
+    *,
+    height: int = 380,
+    x_range: tuple[float, float] | None = None,
+    y_range: tuple[float, float] | None = None,
+) -> go.Figure:
     colors = {"Equity": PALETTE["cyan_strong"], "Crypto": PALETTE["pink_strong"], "Combined": PALETTE["purple"]}
     fig = go.Figure()
     for family, group in metrics.groupby("family"):
@@ -625,9 +632,8 @@ def risk_return_chart(metrics: pd.DataFrame, dark_mode: bool, *, height: int = 3
             go.Scatter(
                 x=group["annualised_volatility"] * 100,
                 y=group["annualised_return"] * 100,
-                mode="markers+text",
+                mode="markers",
                 text=group["fund"],
-                textposition="top center",
                 name=family,
                 marker=dict(size=14, color=colors.get(family, PALETTE["cyan"]), opacity=0.84),
                 hovertemplate=(
@@ -639,6 +645,10 @@ def risk_return_chart(metrics: pd.DataFrame, dark_mode: bool, *, height: int = 3
         )
     fig.update_xaxes(title="Annualised volatility (%)")
     fig.update_yaxes(title="Annualised return (%)")
+    if x_range is not None:
+        fig.update_xaxes(range=list(x_range))
+    if y_range is not None:
+        fig.update_yaxes(range=list(y_range))
     return add_plot_layout(fig, dark_mode, height=height)
 
 
@@ -920,6 +930,19 @@ def render_overview(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:
     st.markdown('<div class="section-title">Risk-return comparison across all ten funds</div>', unsafe_allow_html=True)
     st.plotly_chart(risk_return_chart(metrics, dark_mode, height=390), width="stretch")
     st.caption("Combined Risk Parity is the strongest balanced anchor in this sample, while Crypto Minimum Variance earns the highest Sharpe ratio with materially larger downside risk.")
+    z1, z2 = st.columns(2, gap="large")
+    with z1:
+        st.markdown('<div class="section-title">Zoom: lower-volatility cluster</div>', unsafe_allow_html=True)
+        st.plotly_chart(
+            risk_return_chart(metrics, dark_mode, height=300, x_range=(8, 24), y_range=(4, 20)),
+            width="stretch",
+        )
+    with z2:
+        st.markdown('<div class="section-title">Zoom: higher-volatility crypto cluster</div>', unsafe_allow_html=True)
+        st.plotly_chart(
+            risk_return_chart(metrics, dark_mode, height=300, x_range=(68, 82), y_range=(30, 63)),
+            width="stretch",
+        )
 
     c1, c2 = st.columns(2, gap="large")
     with c1:
@@ -1006,6 +1029,18 @@ def render_compare_funds(data: dict[str, pd.DataFrame], dark_mode: bool) -> None
         st.plotly_chart(growth_chart(fund_returns, chosen_funds, dark_mode), width="stretch")
         st.plotly_chart(drawdown_chart(fund_returns, chosen_funds, dark_mode), width="stretch")
     st.plotly_chart(risk_return_chart(filtered, dark_mode), width="stretch")
+    if len(filtered) > 4:
+        z1, z2 = st.columns(2, gap="large")
+        with z1:
+            st.plotly_chart(
+                risk_return_chart(filtered, dark_mode, height=300, x_range=(8, 24), y_range=(4, 20)),
+                width="stretch",
+            )
+        with z2:
+            st.plotly_chart(
+                risk_return_chart(filtered, dark_mode, height=300, x_range=(68, 82), y_range=(30, 63)),
+                width="stretch",
+            )
     with st.expander("Metric definitions and disclosures"):
         st.markdown(
             """
