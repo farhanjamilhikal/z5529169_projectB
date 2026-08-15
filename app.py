@@ -277,6 +277,8 @@ def inject_css(dark_mode: bool) -> None:
         }}
         .panel-card {{
             padding: 1rem 1.05rem;
+            height: 100%;
+            box-sizing: border-box;
         }}
         .info-card {{
             padding: 0.95rem 1rem;
@@ -376,23 +378,39 @@ def inject_css(dark_mode: bool) -> None:
         [data-testid="stMetricDelta"] div {{
             font-size: 0.88rem;
         }}
-        .stButton > button, .stDownloadButton > button {{
+        .stButton > button, .stDownloadButton > button, .stLinkButton > a {{
             min-height: 44px;
             border-radius: 14px;
             border: 1px solid rgba(255,255,255,0.16);
-            background: var(--oxblood);
+            background: var(--oxblood) !important;
             color: #ffffff !important;
             font-weight: 750;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
         }}
-        .stButton > button:hover, .stDownloadButton > button:hover {{
+        .stButton > button:hover, .stDownloadButton > button:hover, .stLinkButton > a:hover {{
             border-color: rgba(255,255,255,0.28);
+            color: #ffffff !important;
+        }}
+        .stButton > button p, .stDownloadButton > button p, .stLinkButton > a p,
+        .stButton > button span, .stDownloadButton > button span, .stLinkButton > a span {{
+            color: #ffffff !important;
         }}
         .stTextInput input, .stSelectbox div[data-baseweb="select"] > div, .stMultiSelect div[data-baseweb="select"] > div {{
             background: var(--panel-soft) !important;
             color: var(--text) !important;
             border-radius: 12px !important;
             border: 1px solid var(--border) !important;
+        }}
+        [data-baseweb="popover"], [data-baseweb="menu"], ul[role="listbox"] {{
+            background: var(--panel-soft) !important;
+        }}
+        [data-baseweb="popover"] li, [data-baseweb="menu"] li, ul[role="listbox"] li,
+        li[role="option"], [data-baseweb="popover"] *, [data-baseweb="menu"] * {{
+            background: var(--panel-soft) !important;
+            color: var(--text) !important;
+        }}
+        li[role="option"][aria-selected="true"], li[role="option"]:hover {{
+            background: var(--border) !important;
         }}
         code,
         [data-testid="stSidebar"] code,
@@ -439,9 +457,25 @@ def inject_css(dark_mode: bool) -> None:
         }}
         [data-testid="stHorizontalBlock"] {{
             min-width: 0;
+            align-items: stretch;
         }}
         [data-testid="stColumn"] {{
             min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }}
+        [data-testid="stColumn"] > div {{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }}
+        [data-testid="stColumn"] [data-testid="stMarkdownContainer"] {{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }}
+        [data-testid="stColumn"] [data-testid="stMarkdownContainer"] > div {{
+            flex: 1;
         }}
         @media (max-width: 1024px) {{
             .block-container {{

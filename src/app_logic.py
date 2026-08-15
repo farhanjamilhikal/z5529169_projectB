@@ -34,18 +34,24 @@ def allocation_series(
     return contributions, portfolio
 
 
-def allocation_metrics(series: pd.Series) -> dict[str, float]:
-    """Annualised equity-decision-calendar metrics for a custom allocation."""
+def allocation_metrics(series: pd.Series, periods_per_year: int = 252) -> dict[str, float]:
+    """Annualised metrics for a custom allocation.
+
+    periods_per_year should be 365 for a crypto-only selection (native seven-day
+    calendar) and 252 for anything that includes an equity or combined fund
+    (equity decision calendar), matching the annualisation convention used
+    elsewhere in the app and report.
+    """
     clean = series.dropna()
     if clean.empty:
         return {key: np.nan for key in ("Return", "Volatility", "Sharpe", "Max drawdown")}
     growth = (1.0 + clean).cumprod()
-    volatility = clean.std(ddof=1) * np.sqrt(252)
+    volatility = clean.std(ddof=1) * np.sqrt(periods_per_year)
     return {
-        "Return": growth.iloc[-1] ** (252 / len(clean)) - 1.0,
+        "Return": growth.iloc[-1] ** (periods_per_year / len(clean)) - 1.0,
         "Volatility": volatility,
         "Sharpe": (
-            clean.mean() / clean.std(ddof=1) * np.sqrt(252) if clean.std(ddof=1) > 0 else np.nan
+            clean.mean() / clean.std(ddof=1) * np.sqrt(periods_per_year) if clean.std(ddof=1) > 0 else np.nan
         ),
         "Max drawdown": (growth / growth.cummax() - 1.0).min(),
     }
