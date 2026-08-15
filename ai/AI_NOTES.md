@@ -8,16 +8,20 @@ The latest supplement also records the separate Movie-to-Market Lab, the dual-do
 
 ## Student confirmation checklist
 
-- [ ] I ran `python scripts/run_part_b.py` in my own final PyCharm environment.
-- [ ] I ran `python tests/test_smoke.py` and inspected the target-weight sums.
-- [ ] I ran the Streamlit app and tested every tab.
-- [ ] I checked the interpretation against the figures and tables.
-- [ ] I rewrote or approved the report interpretation in my own voice.
-- [ ] I personally opened every external source retained in the references.
-- [ ] I reviewed the 18-term finance lexicon and can justify the terms and scores.
-- [ ] I understand that the strongest crypto result still experienced a drawdown greater than 70 per cent.
-- [ ] I did not claim that headline sentiment caused portfolio returns.
+- [/] I ran `python scripts/run_part_b.py` in my own final PyCharm environment.
+- [/] I ran `python tests/test_smoke.py` and inspected the target-weight sums.
+- [x] I ran the Streamlit app and tested every tab.
+- [/] I checked the interpretation against the figures and tables.
+- [/] I rewrote or approved the report interpretation in my own voice.
+- [/] I personally opened every external source retained in the references.
+- [/] I reviewed the 18-term finance lexicon and can justify the terms and scores.
+- [/] I understand that the strongest crypto result still experienced a drawdown greater than 70 per cent.
+- [/] I did not claim that headline sentiment caused portfolio returns.
 
 ## Student reflection
 
-`[STUDENT TO COMPLETE: explain where AI helped, where it was wrong, what you corrected, and what you decided independently.]`
+`[AI made the whole project faster and more effective at the mechanical level. It helped structure the codebase, implement the walk-forward pipeline, build the Streamlit app and draft the initial technical scaffolds. It was useful for getting the skeleton up quickly: the portfolio methods, the sentiment scoring logic, the validation scripts and the app navigation. Once the objective was clear, AI could translate requirements into code faster than manual drafting from scratch.
+
+
+
+

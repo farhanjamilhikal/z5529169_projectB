@@ -4,10 +4,9 @@ headless = true
 [browser]
 gatherUsageStats = false
 
-# Global settings that cannot be split between light/dark (per Streamlit docs):
-# base color scheme, base font, chart categorical colors, sidebar border visibility.
+# Dark is the only supported theme; there is no light variant to switch to.
 [theme]
-base = "light"
+base = "dark"
 showSidebarBorder = true
 baseRadius = "medium"
 buttonRadius = "medium"
@@ -16,47 +15,7 @@ headingFont = "sans-serif"
 codeFont = "monospace"
 baseFontSize = 17
 baseFontWeight = 400
-chartCategoricalColors = ["#285F7D", "#7A2638", "#A35B45", "#2F765F", "#C48A24", "#577083"]
-
-[theme.light]
-primaryColor = "#7A2638"
-backgroundColor = "#F7F0E3"
-secondaryBackgroundColor = "#FFFDF8"
-textColor = "#263746"
-linkColor = "#285F7D"
-codeTextColor = "#263746"
-codeBackgroundColor = "#E8DDCB"
-borderColor = "#B8A992"
-dataframeBorderColor = "#B8A992"
-dataframeHeaderBackgroundColor = "#EFE4D2"
-showWidgetBorder = true
-greenColor = "#2F765F"
-greenBackgroundColor = "#E6EDE6"
-greenTextColor = "#2F765F"
-redColor = "#A64B3C"
-redBackgroundColor = "#F4E8E1"
-redTextColor = "#A64B3C"
-yellowColor = "#C48A24"
-yellowBackgroundColor = "#F8EFDF"
-yellowTextColor = "#C48A24"
-blueColor = "#285F7D"
-blueBackgroundColor = "#E5EAE9"
-blueTextColor = "#285F7D"
-violetColor = "#A35B45"
-violetBackgroundColor = "#F4EAE3"
-violetTextColor = "#A35B45"
-grayColor = "#5E6870"
-grayBackgroundColor = "#ECEBE8"
-grayTextColor = "#5E6870"
-
-[theme.light.sidebar]
-backgroundColor = "#FFFDF8"
-secondaryBackgroundColor = "#EFE4D2"
-textColor = "#263746"
-codeTextColor = "#263746"
-codeBackgroundColor = "#E8DDCB"
-borderColor = "#B8A992"
-showWidgetBorder = true
+chartCategoricalColors = ["#3E9BFF", "#E23E8C", "#8B5CF6", "#3DDC97", "#F0B93D", "#AEB4D6"]
 
 [theme.dark]
 # Matches the report cover: deep navy base with a vivid blue/purple/magenta chromatic accent set.

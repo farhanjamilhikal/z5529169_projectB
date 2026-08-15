@@ -97,52 +97,27 @@ MOVIE_TITLE = "Movie-to-Market Lab: Spider-Man versus Barbie"
 PUBLIC_REPOSITORY_URL = "https://github.com/farhanjamilhikal/z5529169_projectB"
 
 PALETTE = {
-    # Dark mode: deep navy, matching the report cover's chromatic gradient (blue/purple/magenta glow on near-black).
-    "dark_bg": "#080B14",
-    "dark_bg_alt": "#0E1120",
-    "dark_panel": "#141A30",
-    "dark_panel_soft": "#1B2340",
-    "dark_border": "#333D63",
-    "dark_text": "#F5F7FF",
-    "dark_muted": "#AEB4D6",
-    "light_bg": "#F7F0E3",
-    "light_bg_alt": "#FFFDF8",
-    "light_panel": "#FFFDF8",
-    "light_panel_soft": "#EFE4D2",
-    "light_border": "#C9BBA7",
-    "light_text": "#263746",
-    "light_muted": "#5E6870",
-    # Light mode chart/UI accents (muted "Signal & Story" academic palette).
-    "pink": "#8B2E3F",
-    "pink_strong": "#7A2638",
-    "cyan": "#396F8C",
-    "cyan_strong": "#285F7D",
-    "purple": "#A35B45",
-    "positive": "#2F765F",
-    "negative": "#A64B3C",
-    "warning": "#C48A24",
-    # Dark mode chart/UI accents (vivid chromatic palette, matching the report cover).
-    "dark_pink": "#E23E8C",
-    "dark_cyan": "#3E9BFF",
-    "dark_purple": "#8B5CF6",
-    "dark_positive": "#3DDC97",
-    "dark_negative": "#FF5C7A",
-    "dark_warning": "#F0B93D",
+    # Deep navy, matching the report cover's chromatic gradient (blue/purple/magenta glow on near-black).
+    "bg": "#080B14",
+    "bg_alt": "#0E1120",
+    "panel": "#141A30",
+    "panel_soft": "#1B2340",
+    "border": "#333D63",
+    "text": "#F5F7FF",
+    "muted": "#AEB4D6",
+    # Chart/UI accents (vivid chromatic palette, matching the report cover).
+    "pink": "#E23E8C",
+    "cyan": "#3E9BFF",
+    "purple": "#8B5CF6",
+    "positive": "#3DDC97",
+    "negative": "#FF5C7A",
+    "warning": "#F0B93D",
 }
 
 
-def accent(name: str, dark_mode: bool) -> str:
-    """Mode-aware chart/UI accent colour: vivid chromatic in dark mode, muted academic palette in light mode."""
-    mapping = {
-        "pink": ("pink_strong", "dark_pink"),
-        "cyan": ("cyan_strong", "dark_cyan"),
-        "purple": ("purple", "dark_purple"),
-        "positive": ("positive", "dark_positive"),
-        "negative": ("negative", "dark_negative"),
-        "warning": ("warning", "dark_warning"),
-    }
-    light_key, dark_key = mapping[name]
-    return PALETTE[dark_key] if dark_mode else PALETTE[light_key]
+def accent(name: str, dark_mode: bool = True) -> str:
+    """SignalScope's chart/UI accent colour. The app is dark-theme only; `dark_mode` is kept for call-site compatibility."""
+    return PALETTE[name]
 
 
 def required_artifact_paths(root: Path = ROOT) -> dict[str, Path]:
@@ -185,18 +160,18 @@ def classify_ticker(ticker: str) -> str:
     return "Crypto" if ticker.endswith("-USD") else "Equity"
 
 
-def inject_css(dark_mode: bool) -> None:
-    bg = PALETTE["dark_bg"] if dark_mode else PALETTE["light_bg"]
-    bg_alt = PALETTE["dark_bg_alt"] if dark_mode else PALETTE["light_bg_alt"]
-    panel = PALETTE["dark_panel"] if dark_mode else PALETTE["light_panel"]
-    panel_soft = PALETTE["dark_panel_soft"] if dark_mode else PALETTE["light_panel_soft"]
-    border = PALETTE["dark_border"] if dark_mode else PALETTE["light_border"]
-    text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
-    muted = PALETTE["dark_muted"] if dark_mode else PALETTE["light_muted"]
-    panel_accent = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
-    shadow = "0 10px 24px rgba(8, 19, 28, 0.24)" if dark_mode else "0 8px 20px rgba(69, 52, 34, 0.10)"
-    sidebar_bg = PALETTE["dark_bg_alt"] if dark_mode else PALETTE["light_bg_alt"]
-    sidebar_text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
+def inject_css(dark_mode: bool = True) -> None:
+    bg = PALETTE["bg"]
+    bg_alt = PALETTE["bg_alt"]
+    panel = PALETTE["panel"]
+    panel_soft = PALETTE["panel_soft"]
+    border = PALETTE["border"]
+    text = PALETTE["text"]
+    muted = PALETTE["muted"]
+    panel_accent = PALETTE["text"]
+    shadow = "0 10px 24px rgba(8, 19, 28, 0.24)"
+    sidebar_bg = PALETTE["bg_alt"]
+    sidebar_text = PALETTE["text"]
     st.markdown(
         f"""
         <style>
@@ -450,6 +425,25 @@ def inject_css(dark_mode: bool) -> None:
             overflow: hidden;
             border: 1px solid var(--border);
         }}
+        [data-testid="stExpander"] {{
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }}
+        [data-testid="stExpander"] summary {{
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }}
+        [data-testid="stExpander"] summary:hover {{
+            color: var(--oxblood);
+        }}
+        [data-testid="stExpander"] [data-testid="stExpanderDetails"] {{
+            padding: 0 1rem 1rem;
+        }}
         .plotly-chart {{
             border-radius: 16px;
             max-width: 100%;
@@ -517,9 +511,8 @@ def inject_css(dark_mode: bool) -> None:
     )
 
 
-def set_query_state(page: str, dark_mode: bool) -> None:
+def set_query_state(page: str, dark_mode: bool = True) -> None:
     st.query_params["page"] = page
-    st.query_params["theme"] = "dark" if dark_mode else "light"
 
 
 def initialise_state() -> tuple[str, bool]:
@@ -529,12 +522,8 @@ def initialise_state() -> tuple[str, bool]:
         initial_page = initial_page[0]
     if initial_page not in PAGES:
         initial_page = PAGES[0]
-    theme_param = params.get("theme", "dark")
-    if isinstance(theme_param, list):
-        theme_param = theme_param[0]
-    dark_default = theme_param != "light"
     st.session_state.setdefault("page", initial_page)
-    st.session_state.setdefault("dark_mode", dark_default)
+    st.session_state.setdefault("dark_mode", True)
     return st.session_state["page"], st.session_state["dark_mode"]
 
 
@@ -613,15 +602,10 @@ def render_banner_and_header() -> None:
     )
 
 
-def sidebar_navigation(current_page: str, dark_mode: bool) -> tuple[str, bool]:
+def sidebar_navigation(current_page: str, dark_mode: bool = True) -> tuple[str, bool]:
     with st.sidebar:
         st.markdown(f"## {BRAND}")
         st.caption(TAGLINE)
-        dark_mode = st.toggle(
-            "Dark mode",
-            value=dark_mode,
-            help="Dark mode is the default. Light mode uses the same SignalScope palette with higher daytime contrast.",
-        )
         selected_page = st.radio(
             "Navigation",
             PAGES,
@@ -635,13 +619,13 @@ def sidebar_navigation(current_page: str, dark_mode: bool) -> tuple[str, bool]:
     return selected_page, dark_mode
 
 
-def theme_colors(dark_mode: bool) -> dict[str, str]:
+def theme_colors(dark_mode: bool = True) -> dict[str, str]:
     return {
         "paper": "rgba(0,0,0,0)",
         "plot": "rgba(0,0,0,0)",
-        "text": PALETTE["dark_text"] if dark_mode else PALETTE["light_text"],
-        "muted": PALETTE["dark_muted"] if dark_mode else PALETTE["light_muted"],
-        "grid": "rgba(255,255,255,0.14)" if dark_mode else "rgba(11,15,47,0.10)",
+        "text": PALETTE["text"],
+        "muted": PALETTE["muted"],
+        "grid": "rgba(255,255,255,0.14)",
         "cyan": accent("cyan", dark_mode),
         "pink": accent("pink", dark_mode),
         "purple": accent("purple", dark_mode),
@@ -650,9 +634,9 @@ def theme_colors(dark_mode: bool) -> dict[str, str]:
     }
 
 
-def add_plot_layout(fig: go.Figure, dark_mode: bool, *, height: int = 420) -> go.Figure:
+def add_plot_layout(fig: go.Figure, dark_mode: bool = True, *, height: int = 420) -> go.Figure:
     colors = theme_colors(dark_mode)
-    annotation_color = "#FFFFFF" if dark_mode else "#172033"
+    annotation_color = "#FFFFFF"
     fig.update_layout(
         paper_bgcolor=colors["paper"],
         plot_bgcolor=colors["plot"],
@@ -681,7 +665,7 @@ def add_plot_layout(fig: go.Figure, dark_mode: bool, *, height: int = 420) -> go
             tickfont=dict(size=14),
         ),
         hoverlabel=dict(
-            bgcolor=PALETTE["dark_bg"] if dark_mode else "#FFFDF8",
+            bgcolor=PALETTE["bg"],
             font_color=colors["text"],
             font_size=15,
         ),
@@ -780,7 +764,7 @@ def risk_return_chart(
                     color=colors.get(family, accent("cyan", dark_mode)),
                     opacity=0.78,
                     line=dict(
-                        color=PALETTE["dark_bg"] if dark_mode else PALETTE["light_bg"],
+                        color=PALETTE["bg"],
                         width=1.5,
                     ),
                 ),
@@ -824,36 +808,36 @@ def render_risk_return_zoom_views(
     for heading, cluster, x_range, y_range, explanation in clusters:
         if cluster.empty:
             continue
-        st.markdown(f'<div class="section-title">{heading}</div>', unsafe_allow_html=True)
-        st.caption(explanation)
-        st.plotly_chart(
-            risk_return_chart(
-                cluster,
-                dark_mode,
-                height=430,
-                x_range=x_range,
-                y_range=y_range,
-            ),
-            width="stretch",
-        )
-        detail = cluster[
-            ["fund", "annualised_volatility", "annualised_return", "sharpe_ratio"]
-        ].copy()
-        detail["annualised_volatility"] = detail["annualised_volatility"].map(fmt_pct)
-        detail["annualised_return"] = detail["annualised_return"].map(fmt_pct)
-        detail["sharpe_ratio"] = detail["sharpe_ratio"].map(fmt_ratio)
-        st.dataframe(
-            detail.rename(
-                columns={
-                    "fund": "Fund",
-                    "annualised_volatility": "Volatility",
-                    "annualised_return": "Return",
-                    "sharpe_ratio": "Sharpe ratio",
-                }
-            ),
-            width="stretch",
-            hide_index=True,
-        )
+        with st.expander(heading, expanded=False):
+            st.caption(explanation)
+            st.plotly_chart(
+                risk_return_chart(
+                    cluster,
+                    dark_mode,
+                    height=430,
+                    x_range=x_range,
+                    y_range=y_range,
+                ),
+                width="stretch",
+            )
+            detail = cluster[
+                ["fund", "annualised_volatility", "annualised_return", "sharpe_ratio"]
+            ].copy()
+            detail["annualised_volatility"] = detail["annualised_volatility"].map(fmt_pct)
+            detail["annualised_return"] = detail["annualised_return"].map(fmt_pct)
+            detail["sharpe_ratio"] = detail["sharpe_ratio"].map(fmt_ratio)
+            st.dataframe(
+                detail.rename(
+                    columns={
+                        "fund": "Fund",
+                        "annualised_volatility": "Volatility",
+                        "annualised_return": "Return",
+                        "sharpe_ratio": "Sharpe ratio",
+                    }
+                ),
+                width="stretch",
+                hide_index=True,
+            )
 
 
 def holdings_bar_chart(holdings: pd.DataFrame, dark_mode: bool, *, height: int = 430) -> go.Figure:
@@ -978,7 +962,7 @@ def movie_event_window_chart(
     fig.add_vline(
         x=event_summary_row["mapped_trading_date"],
         line_dash="dash",
-        line_color=PALETTE["warning"],
+        line_color=accent("warning", dark_mode),
         annotation_text="Mapped event day",
         annotation_position="top right",
     )
@@ -1173,26 +1157,27 @@ def render_overview(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:
     st.success(f"Evidence used: {evidence}")
     st.warning(f"What could invalidate the choice: {drawback}")
 
-    c1, c2 = st.columns(2, gap="large")
-    with c1:
-        st.markdown('<div class="section-title">Fund families</div>', unsafe_allow_html=True)
-        for family, description in FAMILY_DESCRIPTIONS.items():
-            st.markdown(
-                f'<div class="info-card" style="margin-bottom:0.75rem;"><strong>{family}</strong><br><span class="helper-text">{description}</span></div>',
-                unsafe_allow_html=True,
-            )
-    with c2:
-        st.markdown('<div class="section-title">Fund methods</div>', unsafe_allow_html=True)
-        method_copy = {
-            "Equal Weight": "Every asset in the relevant universe receives the same target share.",
-            "Minimum Variance": "Historical covariance is used to minimise volatility subject to long-only caps.",
-            "Inverse-Volatility Risk Parity": "Weights scale inversely with volatility rather than solving the full-covariance equal-risk-contribution problem.",
-        }
-        for label, copy in method_copy.items():
-            st.markdown(
-                f'<div class="info-card" style="margin-bottom:0.75rem;"><strong>{label}</strong><br><span class="helper-text">{copy}</span></div>',
-                unsafe_allow_html=True,
-            )
+    with st.expander("Fund families & methods reference", expanded=False):
+        c1, c2 = st.columns(2, gap="large")
+        with c1:
+            st.markdown('<div class="section-title">Fund families</div>', unsafe_allow_html=True)
+            for family, description in FAMILY_DESCRIPTIONS.items():
+                st.markdown(
+                    f'<div class="info-card" style="margin-bottom:0.75rem;"><strong>{family}</strong><br><span class="helper-text">{description}</span></div>',
+                    unsafe_allow_html=True,
+                )
+        with c2:
+            st.markdown('<div class="section-title">Fund methods</div>', unsafe_allow_html=True)
+            method_copy = {
+                "Equal Weight": "Every asset in the relevant universe receives the same target share.",
+                "Minimum Variance": "Historical covariance is used to minimise volatility subject to long-only caps.",
+                "Inverse-Volatility Risk Parity": "Weights scale inversely with volatility rather than solving the full-covariance equal-risk-contribution problem.",
+            }
+            for label, copy in method_copy.items():
+                st.markdown(
+                    f'<div class="info-card" style="margin-bottom:0.75rem;"><strong>{label}</strong><br><span class="helper-text">{copy}</span></div>',
+                    unsafe_allow_html=True,
+                )
     if st.button("Open the Movie-to-Market Lab", help="Jump to the separate Spider-Man versus Barbie research extension."):
         st.session_state["page"] = "Movie-to-Market Lab"
         set_query_state("Movie-to-Market Lab", dark_mode)
