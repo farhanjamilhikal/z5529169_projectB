@@ -97,13 +97,14 @@ MOVIE_TITLE = "Movie-to-Market Lab: Spider-Man versus Barbie"
 PUBLIC_REPOSITORY_URL = "https://github.com/farhanjamilhikal/z5529169_projectB"
 
 PALETTE = {
-    "dark_bg": "#192A3A",
-    "dark_bg_alt": "#22384A",
-    "dark_panel": "#243D50",
-    "dark_panel_soft": "#2D485C",
-    "dark_border": "#577083",
-    "dark_text": "#FFF9EE",
-    "dark_muted": "#D5D1C8",
+    # Dark mode: deep navy, matching the report cover's chromatic gradient (blue/purple/magenta glow on near-black).
+    "dark_bg": "#080B14",
+    "dark_bg_alt": "#0E1120",
+    "dark_panel": "#141A30",
+    "dark_panel_soft": "#1B2340",
+    "dark_border": "#333D63",
+    "dark_text": "#F5F7FF",
+    "dark_muted": "#AEB4D6",
     "light_bg": "#F7F0E3",
     "light_bg_alt": "#FFFDF8",
     "light_panel": "#FFFDF8",
@@ -111,6 +112,7 @@ PALETTE = {
     "light_border": "#C9BBA7",
     "light_text": "#263746",
     "light_muted": "#5E6870",
+    # Light mode chart/UI accents (muted "Signal & Story" academic palette).
     "pink": "#8B2E3F",
     "pink_strong": "#7A2638",
     "cyan": "#396F8C",
@@ -119,7 +121,28 @@ PALETTE = {
     "positive": "#2F765F",
     "negative": "#A64B3C",
     "warning": "#C48A24",
+    # Dark mode chart/UI accents (vivid chromatic palette, matching the report cover).
+    "dark_pink": "#E23E8C",
+    "dark_cyan": "#3E9BFF",
+    "dark_purple": "#8B5CF6",
+    "dark_positive": "#3DDC97",
+    "dark_negative": "#FF5C7A",
+    "dark_warning": "#F0B93D",
 }
+
+
+def accent(name: str, dark_mode: bool) -> str:
+    """Mode-aware chart/UI accent colour: vivid chromatic in dark mode, muted academic palette in light mode."""
+    mapping = {
+        "pink": ("pink_strong", "dark_pink"),
+        "cyan": ("cyan_strong", "dark_cyan"),
+        "purple": ("purple", "dark_purple"),
+        "positive": ("positive", "dark_positive"),
+        "negative": ("negative", "dark_negative"),
+        "warning": ("warning", "dark_warning"),
+    }
+    light_key, dark_key = mapping[name]
+    return PALETTE[dark_key] if dark_mode else PALETTE[light_key]
 
 
 def required_artifact_paths(root: Path = ROOT) -> dict[str, Path]:
@@ -186,12 +209,12 @@ def inject_css(dark_mode: bool) -> None:
             --text: {text};
             --muted: {muted};
             --panel-accent: {panel_accent};
-            --oxblood: {PALETTE["pink_strong"]};
-            --blue: {PALETTE["cyan_strong"]};
-            --brick: {PALETTE["purple"]};
-            --positive: {PALETTE["positive"]};
-            --negative: {PALETTE["negative"]};
-            --warning: {PALETTE["warning"]};
+            --oxblood: {accent("pink", dark_mode)};
+            --blue: {accent("cyan", dark_mode)};
+            --brick: {accent("purple", dark_mode)};
+            --positive: {accent("positive", dark_mode)};
+            --negative: {accent("negative", dark_mode)};
+            --warning: {accent("warning", dark_mode)};
             --shadow: {shadow};
             --radius: 18px;
             --content-width: 1280px;
@@ -584,12 +607,12 @@ def theme_colors(dark_mode: bool) -> dict[str, str]:
         "plot": "rgba(0,0,0,0)",
         "text": PALETTE["dark_text"] if dark_mode else PALETTE["light_text"],
         "muted": PALETTE["dark_muted"] if dark_mode else PALETTE["light_muted"],
-        "grid": "rgba(255,255,255,0.10)" if dark_mode else "rgba(11,15,47,0.10)",
-        "cyan": PALETTE["cyan_strong"],
-        "pink": PALETTE["pink_strong"],
-        "purple": PALETTE["purple"],
-        "positive": PALETTE["positive"],
-        "negative": PALETTE["negative"],
+        "grid": "rgba(255,255,255,0.14)" if dark_mode else "rgba(11,15,47,0.10)",
+        "cyan": accent("cyan", dark_mode),
+        "pink": accent("pink", dark_mode),
+        "purple": accent("purple", dark_mode),
+        "positive": accent("positive", dark_mode),
+        "negative": accent("negative", dark_mode),
     }
 
 
@@ -653,7 +676,7 @@ def growth_chart(
         .sort_values("date")
         .pivot(index="date", columns="fund", values="growth_of_1")
     )
-    colors = [PALETTE["cyan_strong"], PALETTE["pink_strong"], PALETTE["purple"], PALETTE["positive"], "#A78BFA"]
+    colors = [accent("cyan", dark_mode), accent("pink", dark_mode), accent("purple", dark_mode), accent("positive", dark_mode), "#A78BFA"]
     fig = go.Figure()
     for index, fund in enumerate(frame.columns):
         fig.add_trace(
@@ -684,7 +707,7 @@ def drawdown_chart(
         .pivot(index="date", columns="fund", values="drawdown")
     )
     fig = go.Figure()
-    palette = [PALETTE["pink_strong"], PALETTE["cyan_strong"], PALETTE["purple"], PALETTE["positive"]]
+    palette = [accent("pink", dark_mode), accent("cyan", dark_mode), accent("purple", dark_mode), accent("positive", dark_mode)]
     for index, fund in enumerate(frame.columns):
         fig.add_trace(
             go.Scatter(
@@ -708,7 +731,7 @@ def risk_return_chart(
     x_range: tuple[float, float] | None = None,
     y_range: tuple[float, float] | None = None,
 ) -> go.Figure:
-    colors = {"Equity": PALETTE["cyan_strong"], "Crypto": PALETTE["pink_strong"], "Combined": PALETTE["purple"]}
+    colors = {"Equity": accent("cyan", dark_mode), "Crypto": accent("pink", dark_mode), "Combined": accent("purple", dark_mode)}
     fig = go.Figure()
     for family, group in metrics.groupby("family"):
         fig.add_trace(
@@ -720,7 +743,7 @@ def risk_return_chart(
                 name=family,
                 marker=dict(
                     size=18,
-                    color=colors.get(family, PALETTE["cyan"]),
+                    color=colors.get(family, accent("cyan", dark_mode)),
                     opacity=0.9,
                     line=dict(color=theme_colors(dark_mode)["text"], width=1.5),
                 ),
@@ -811,7 +834,7 @@ def holdings_bar_chart(holdings: pd.DataFrame, dark_mode: bool, *, height: int =
             x=plot["weight"] * 100,
             y=plot["ticker"],
             orientation="h",
-            marker=dict(color=PALETTE["cyan_strong"]),
+            marker=dict(color=accent("cyan", dark_mode)),
             text=[f"{weight:.2%}" for weight in plot["weight"]],
             textposition="outside",
         )
@@ -835,7 +858,7 @@ def sector_sentiment_chart(
         lambda series: series.rolling(window, min_periods=1).mean()
     )
     fig = go.Figure()
-    palette = [PALETTE["cyan_strong"], PALETTE["pink_strong"], PALETTE["purple"], PALETTE["positive"], "#A78BFA"]
+    palette = [accent("cyan", dark_mode), accent("pink", dark_mode), accent("purple", dark_mode), accent("positive", dark_mode), "#A78BFA"]
     for index, (sector, group) in enumerate(plot.groupby("sector")):
         fig.add_trace(
             go.Scatter(
@@ -866,7 +889,7 @@ def coverage_chart(
         lambda series: series.rolling(window, min_periods=1).mean()
     )
     fig = go.Figure()
-    palette = [PALETTE["purple"], PALETTE["cyan_strong"], PALETTE["pink_strong"], PALETTE["positive"], "#A78BFA"]
+    palette = [accent("purple", dark_mode), accent("cyan", dark_mode), accent("pink", dark_mode), accent("positive", dark_mode), "#A78BFA"]
     for index, (sector, group) in enumerate(plot.groupby("sector")):
         fig.add_trace(
             go.Scatter(
@@ -900,10 +923,10 @@ def movie_event_window_chart(
     plot["rebased"] = plot.groupby("ticker")["adjClose"].transform(lambda series: series / series.iloc[0])
     fig = go.Figure()
     palette = {
-        event_summary_row["primary_ticker"]: PALETTE["pink_strong"],
-        "SPY": PALETTE["cyan_strong"],
-        "DIS": PALETTE["purple"],
-        "WBD": PALETTE["purple"],
+        event_summary_row["primary_ticker"]: accent("pink", dark_mode),
+        "SPY": accent("cyan", dark_mode),
+        "DIS": accent("purple", dark_mode),
+        "WBD": accent("purple", dark_mode),
     }
     for ticker, group in plot.groupby("ticker"):
         fig.add_trace(
@@ -912,7 +935,7 @@ def movie_event_window_chart(
                 y=group["rebased"],
                 mode="lines+markers",
                 name=ticker,
-                line=dict(width=2.5 if ticker == event_summary_row["primary_ticker"] else 1.9, color=palette.get(ticker, PALETTE["cyan"])),
+                line=dict(width=2.5 if ticker == event_summary_row["primary_ticker"] else 1.9, color=palette.get(ticker, accent("cyan", dark_mode))),
             )
         )
     fig.add_vline(
@@ -1000,8 +1023,8 @@ def allocation_builder(
     growth = (1.0 + series).cumprod().rename("Allocation growth")
     drawdown = growth / growth.cummax() - 1.0
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=growth.index, y=growth, mode="lines", name="Growth of $1", line=dict(color=PALETTE["cyan_strong"], width=2.6)))
-    fig.add_trace(go.Scatter(x=drawdown.index, y=drawdown, mode="lines", name="Drawdown", line=dict(color=PALETTE["pink_strong"], width=2.0), yaxis="y2"))
+    fig.add_trace(go.Scatter(x=growth.index, y=growth, mode="lines", name="Growth of $1", line=dict(color=accent("cyan", dark_mode), width=2.6)))
+    fig.add_trace(go.Scatter(x=drawdown.index, y=drawdown, mode="lines", name="Drawdown", line=dict(color=accent("pink", dark_mode), width=2.0), yaxis="y2"))
     fig.update_layout(
         yaxis=dict(title="Growth of $1", gridcolor=theme_colors(dark_mode)["grid"]),
         yaxis2=dict(title="Drawdown", overlaying="y", side="right", gridcolor=theme_colors(dark_mode)["grid"]),
@@ -1420,8 +1443,8 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     focus_sector = st.selectbox("Observed-only sensitivity sector", sectors, index=0)
     focus = sector_index[sector_index["sector"] == focus_sector].copy().sort_values("date").tail(180)
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=focus["date"], y=focus["sentiment"], mode="lines", name="Neutral-fill sentiment", line=dict(color=PALETTE["cyan_strong"], width=2.2)))
-    fig.add_trace(go.Scatter(x=focus["date"], y=focus["observed_only_sentiment"], mode="lines", name="Observed-only sentiment", line=dict(color=PALETTE["pink_strong"], width=2.0)))
+    fig.add_trace(go.Scatter(x=focus["date"], y=focus["sentiment"], mode="lines", name="Neutral-fill sentiment", line=dict(color=accent("cyan", dark_mode), width=2.2)))
+    fig.add_trace(go.Scatter(x=focus["date"], y=focus["observed_only_sentiment"], mode="lines", name="Observed-only sentiment", line=dict(color=accent("pink", dark_mode), width=2.0)))
     st.plotly_chart(add_plot_layout(fig, dark_mode, height=320), width="stretch")
     st.caption("The observed-only sensitivity removes the neutral fill from no-news sector dates. The gap should be read as a model-governance check, not as a trading edge.")
 
