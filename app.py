@@ -170,6 +170,7 @@ def inject_css(dark_mode: bool) -> None:
     border = PALETTE["dark_border"] if dark_mode else PALETTE["light_border"]
     text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
     muted = PALETTE["dark_muted"] if dark_mode else PALETTE["light_muted"]
+    panel_accent = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
     shadow = "0 10px 24px rgba(8, 19, 28, 0.24)" if dark_mode else "0 8px 20px rgba(69, 52, 34, 0.10)"
     sidebar_bg = PALETTE["dark_bg_alt"] if dark_mode else PALETTE["light_bg_alt"]
     sidebar_text = PALETTE["dark_text"] if dark_mode else PALETTE["light_text"]
@@ -184,6 +185,7 @@ def inject_css(dark_mode: bool) -> None:
             --border: {border};
             --text: {text};
             --muted: {muted};
+            --panel-accent: {panel_accent};
             --oxblood: {PALETTE["pink_strong"]};
             --blue: {PALETTE["cyan_strong"]};
             --brick: {PALETTE["purple"]};
@@ -368,6 +370,18 @@ def inject_css(dark_mode: bool) -> None:
             color: var(--text) !important;
             border-radius: 12px !important;
             border: 1px solid var(--border) !important;
+        }}
+        code,
+        [data-testid="stSidebar"] code,
+        .stTextInput input,
+        .stNumberInput input,
+        .stTextArea textarea,
+        [data-baseweb="select"] span,
+        [data-baseweb="select"] input {{
+            color: var(--panel-accent) !important;
+            -webkit-text-fill-color: var(--panel-accent) !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
         }}
         div[data-testid="stMarkdownContainer"] p, div[data-testid="stMarkdownContainer"] li, label, .stCaption {{
             color: var(--text);
@@ -581,6 +595,7 @@ def theme_colors(dark_mode: bool) -> dict[str, str]:
 
 def add_plot_layout(fig: go.Figure, dark_mode: bool, *, height: int = 420) -> go.Figure:
     colors = theme_colors(dark_mode)
+    annotation_color = "#FFFFFF" if dark_mode else "#172033"
     fig.update_layout(
         paper_bgcolor=colors["paper"],
         plot_bgcolor=colors["plot"],
@@ -613,6 +628,14 @@ def add_plot_layout(fig: go.Figure, dark_mode: bool, *, height: int = 420) -> go
             font_color=colors["text"],
             font_size=15,
         ),
+    )
+    fig.update_annotations(
+        font=dict(color=annotation_color, size=15),
+        bgcolor="rgba(0,0,0,0)",
+        bordercolor="rgba(0,0,0,0)",
+    )
+    fig.update_traces(
+        textfont=dict(color=annotation_color, size=14),
     )
     return fig
 
