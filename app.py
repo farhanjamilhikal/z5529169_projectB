@@ -387,8 +387,6 @@ def inject_css(dark_mode: bool = True) -> None:
         li[role="option"][aria-selected="true"], li[role="option"]:hover {{
             background: var(--border) !important;
         }}
-        code,
-        [data-testid="stSidebar"] code,
         .stTextInput input,
         .stNumberInput input,
         .stTextArea textarea,
@@ -396,6 +394,12 @@ def inject_css(dark_mode: bool = True) -> None:
         [data-baseweb="select"] input {{
             color: var(--panel-accent) !important;
             -webkit-text-fill-color: var(--panel-accent) !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }}
+        code, [data-testid="stSidebar"] code {{
+            color: var(--blue) !important;
+            -webkit-text-fill-color: var(--blue) !important;
             font-weight: 700 !important;
             opacity: 1 !important;
         }}
@@ -640,43 +644,43 @@ def add_plot_layout(fig: go.Figure, dark_mode: bool = True, *, height: int = 420
     fig.update_layout(
         paper_bgcolor=colors["paper"],
         plot_bgcolor=colors["plot"],
-        font=dict(color=colors["text"], size=15),
-        margin=dict(l=72, r=34, t=28, b=72),
+        font=dict(color=colors["text"], size=12),
+        margin=dict(l=64, r=28, t=24, b=64),
         height=height,
         legend=dict(
             orientation="h",
             y=-0.28,
             x=0,
-            font=dict(size=14),
+            font=dict(size=11),
             itemsizing="constant",
         ),
         xaxis=dict(
             gridcolor=colors["grid"],
             zeroline=False,
             automargin=True,
-            title_font=dict(size=16),
-            tickfont=dict(size=14),
+            title_font=dict(size=13),
+            tickfont=dict(size=11),
         ),
         yaxis=dict(
             gridcolor=colors["grid"],
             zeroline=False,
             automargin=True,
-            title_font=dict(size=16),
-            tickfont=dict(size=14),
+            title_font=dict(size=13),
+            tickfont=dict(size=11),
         ),
         hoverlabel=dict(
             bgcolor=PALETTE["bg"],
             font_color=colors["text"],
-            font_size=15,
+            font_size=12,
         ),
     )
     fig.update_annotations(
-        font=dict(color=annotation_color, size=15),
+        font=dict(color=annotation_color, size=12),
         bgcolor="rgba(0,0,0,0)",
         bordercolor="rgba(0,0,0,0)",
     )
     fig.update_traces(
-        textfont=dict(color=annotation_color, size=14),
+        textfont=dict(color=annotation_color, size=11),
     )
     return fig
 
@@ -760,12 +764,12 @@ def risk_return_chart(
                 text=group["fund"],
                 name=family,
                 marker=dict(
-                    size=13,
+                    size=9,
                     color=colors.get(family, accent("cyan", dark_mode)),
                     opacity=0.78,
                     line=dict(
                         color=PALETTE["bg"],
-                        width=1.5,
+                        width=1,
                     ),
                 ),
                 hovertemplate=(
