@@ -2,8 +2,13 @@
 
 from __future__ import annotations
 
+import re
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
+
+SECTOR_LEXICON_PATH = Path(__file__).resolve().parents[1] / "research_extension" / "sector_sentiment_lexicon.csv"
 
 FINANCE_LEXICON = {
     "beat": 1.5,
@@ -41,8 +46,72 @@ def _analyser(finance_augmented: bool = True):
     return analyser
 
 
-def score_headlines(aligned_headlines: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Score the original headline string with baseline and finance-augmented VADER."""
+SECTOR_CATEGORY_SCORE = {"positive": 1.5, "negative": -1.5, "neutral": 0.0}
+
+
+def load_sector_lexicon(path: Path = SECTOR_LEXICON_PATH) -> pd.DataFrame:
+    """Load the student research-extension sector lexicon (sector, category, phrase, score)."""
+    df = pd.read_csv(path)
+    if "score" not in df.columns:
+        df["score"] = df["category"].map(SECTOR_CATEGORY_SCORE)
+    return df
+
+
+def _sector_matchers(sector_lexicon: pd.DataFrame) -> dict[str, tuple[re.Pattern, dict[str, str], dict]]:
+    """Build one finance-augmented VADER analyser per sector, with that sector's
+    scored phrases folded in as placeholder tokens. VADER's own compound-score
+    maths (negation, intensifiers, sentence length) still governs the result;
+    only phrase detection is custom, since VADER itself only scores single words.
+    """
+    matchers: dict[str, tuple[re.Pattern, dict[str, str], dict]] = {}
+    for sector, group in sector_lexicon.groupby("sector"):
+        scored = group[group["score"] != 0].copy()
+        if scored.empty:
+            continue
+        phrase_to_token: dict[str, str] = {}
+        placeholder_lexicon: dict[str, float] = {}
+        for _, row in scored.iterrows():
+            phrase = str(row["phrase"]).strip().lower()
+            if not phrase or phrase in phrase_to_token:
+                continue
+            token = "sectorterm_" + re.sub(r"[^a-z0-9]+", "_", phrase).strip("_")
+            phrase_to_token[phrase] = token
+            placeholder_lexicon[token] = float(row["score"])
+        # longest phrase first so multi-word phrases aren't shadowed by a shorter substring
+        ordered_phrases = sorted(phrase_to_token, key=len, reverse=True)
+        pattern = re.compile(
+            "|".join(re.escape(phrase) for phrase in ordered_phrases), re.IGNORECASE
+        )
+        analyser = _analyser(finance_augmented=True)
+        analyser.lexicon.update(placeholder_lexicon)
+        matchers[sector] = (pattern, phrase_to_token, analyser)
+    return matchers
+
+
+def _sector_augmented_scores(titles: pd.Series, sectors: pd.Series, sector_lexicon: pd.DataFrame) -> pd.Series:
+    matchers = _sector_matchers(sector_lexicon)
+    scores = pd.Series(np.nan, index=titles.index, dtype=float)
+    for sector, (pattern, phrase_to_token, analyser) in matchers.items():
+        mask = sectors == sector
+        if not mask.any():
+            continue
+        replaced = titles[mask].str.replace(
+            pattern, lambda m: f" {phrase_to_token[m.group(0).lower()]} ", regex=True
+        )
+        scores[mask] = replaced.map(lambda text: analyser.polarity_scores(text)["compound"])
+    return scores
+
+
+def score_headlines(
+    aligned_headlines: pd.DataFrame, sector_lexicon: pd.DataFrame | None = None
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Score the original headline string with baseline and finance-augmented VADER.
+
+    `sector_lexicon`, if supplied, adds a sector-scoped phrase-matching pass
+    (the research-extension sector lexicon) on top of the finance-augmented
+    score, exposed as a separate `sector_vader_compound` column so the
+    validated 18-term finance-augmented pathway is unchanged.
+    """
     frame = aligned_headlines.copy()
     base = _analyser(finance_augmented=False)
     finance = _analyser(finance_augmented=True)
@@ -51,6 +120,12 @@ def score_headlines(aligned_headlines: pd.DataFrame) -> tuple[pd.DataFrame, pd.D
     frame["finance_vader_compound"] = titles.map(
         lambda text: finance.polarity_scores(text)["compound"]
     )
+    if sector_lexicon is not None and not sector_lexicon.empty:
+        frame["sector_vader_compound"] = _sector_augmented_scores(
+            titles, frame["sector"], sector_lexicon
+        )
+    else:
+        frame["sector_vader_compound"] = np.nan
     frame["publisher_observed"] = frame["publisher"].fillna("").str.strip().ne("").astype(int)
     frame["url_observed"] = frame["url"].fillna("").str.strip().ne("").astype(int)
 
@@ -59,6 +134,7 @@ def score_headlines(aligned_headlines: pd.DataFrame) -> tuple[pd.DataFrame, pd.D
         .agg(
             sentiment=("finance_vader_compound", "mean"),
             baseline_sentiment=("vader_compound", "mean"),
+            sector_augmented_sentiment=("sector_vader_compound", "mean"),
             article_count=("title", "size"),
             publisher_completeness=("publisher_observed", "mean"),
             url_completeness=("url_observed", "mean"),
@@ -100,6 +176,7 @@ def complete_ticker_day_panel(
     for col in [
         "sentiment",
         "baseline_sentiment",
+        "sector_augmented_sentiment",
         "article_count",
         "publisher_completeness",
         "url_completeness",
@@ -123,6 +200,7 @@ def sector_sentiment_index(complete_panel: pd.DataFrame) -> pd.DataFrame:
                 "date": date,
                 "sector": sector,
                 "sentiment": group["sentiment"].mean(),
+                "sector_augmented_sentiment": group["sector_augmented_sentiment"].mean(),
                 "observed_only_sentiment": observed.mean() if len(observed) else np.nan,
                 "coverage_rate": group["observed_news"].mean(),
                 "article_count": group["article_count"].sum(),

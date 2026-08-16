@@ -56,6 +56,19 @@ FAMILY_DESCRIPTIONS = {
     "Combined": "The equity universe plus the supplied crypto sleeve on the shared equity decision calendar.",
 }
 
+SECTOR_DISPLAY_NAMES = {
+    "Comm": "Comm (Communication / Telecom)",
+    "Consumer": "Consumer",
+    "Energy": "Energy",
+    "Financials": "Financials",
+    "Healthcare": "Healthcare",
+    "Industrials": "Industrials",
+    "Materials": "Materials",
+    "RealEstate": "Real Estate",
+    "Tech": "Tech",
+    "Utilities": "Utilities",
+}
+
 REQUIRED_ARTIFACTS = {
     "performance_metrics": TABLES_DIR / "performance_metrics.csv",
     "fund_returns": DATA_DIR / "fund_returns.csv",
@@ -67,6 +80,7 @@ REQUIRED_ARTIFACTS = {
     "finance_validation_metrics": TABLES_DIR / "finance_validation_metrics.csv",
     "finance_confusion_matrix": TABLES_DIR / "finance_confusion_matrix.csv",
     "finance_lexicon": TABLES_DIR / "finance_lexicon_extension.csv",
+    "sector_lexicon": TABLES_DIR / "sector_sentiment_lexicon.csv",
     "model_specification": TABLES_DIR / "model_specification.csv",
     "asset_data_use_register": TABLES_DIR / "asset_data_use_register.csv",
     "carried_forward_integrity_audit": TABLES_DIR / "carried_forward_integrity_audit.csv",
@@ -554,6 +568,7 @@ def load_artifacts() -> dict[str, pd.DataFrame]:
             REQUIRED_ARTIFACTS["finance_confusion_matrix"]
         ),
         "finance_lexicon": pd.read_csv(REQUIRED_ARTIFACTS["finance_lexicon"]),
+        "sector_lexicon": pd.read_csv(REQUIRED_ARTIFACTS["sector_lexicon"]),
         "model_specification": pd.read_csv(REQUIRED_ARTIFACTS["model_specification"]),
         "asset_data_use_register": pd.read_csv(REQUIRED_ARTIFACTS["asset_data_use_register"]),
         "carried_forward_integrity_audit": pd.read_csv(REQUIRED_ARTIFACTS["carried_forward_integrity_audit"]),
@@ -1402,6 +1417,7 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     finance_metrics = data["finance_validation_metrics"].copy()
     finance_confusion = data["finance_confusion_matrix"].copy()
     finance_lexicon = data["finance_lexicon"].copy()
+    sector_lexicon = data["sector_lexicon"].copy()
     fusion = data["fusion_comparison"].copy()
     checks = data["sentiment_product_app_checks"].copy()
     fund_returns = data["fund_returns"].copy()
@@ -1479,8 +1495,10 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=focus["date"], y=focus["sentiment"], mode="lines", name="Neutral-fill sentiment", line=dict(color=accent("cyan", dark_mode), width=2.2)))
     fig.add_trace(go.Scatter(x=focus["date"], y=focus["observed_only_sentiment"], mode="lines", name="Observed-only sentiment", line=dict(color=accent("pink", dark_mode), width=2.0)))
+    if "sector_augmented_sentiment" in focus.columns:
+        fig.add_trace(go.Scatter(x=focus["date"], y=focus["sector_augmented_sentiment"], mode="lines", name="Sector-augmented sentiment (research extension)", line=dict(color=accent("purple", dark_mode), width=1.8, dash="dot")))
     st.plotly_chart(add_plot_layout(fig, dark_mode, height=320), width="stretch")
-    st.caption("The observed-only sensitivity removes the neutral fill from no-news sector dates. The gap should be read as a model-governance check, not as a trading edge.")
+    st.caption("The observed-only sensitivity removes the neutral fill from no-news sector dates. The gap should be read as a model-governance check, not as a trading edge. Sector-augmented sentiment adds the sector-specific phrase lexicon on top of the finance-augmented score.")
 
     fusion_left, fusion_right = st.columns([1, 1], gap="large")
     with fusion_left:
@@ -1528,6 +1546,22 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
         f"{augmented_macro_f1:.3f}",
         f"{augmented_macro_f1 - standard_macro_f1:+.3f}",
     )
+    has_sector_model = ((overall["model"] == "sector_augmented_vader")).any()
+    if has_sector_model:
+        sector_accuracy = finance_value("sector_augmented_vader", "accuracy")
+        sector_macro_f1 = finance_value("sector_augmented_vader", "macro_f1")
+        st.caption("Research extension, evaluated on the same 1,000-headline holdout:")
+        v5, v6 = st.columns(2)
+        v5.metric(
+            "Sector-augmented accuracy",
+            f"{sector_accuracy:.1%}",
+            f"{(sector_accuracy - augmented_accuracy) * 100:+.1f} pp vs finance-augmented",
+        )
+        v6.metric(
+            "Sector-augmented macro-F1",
+            f"{sector_macro_f1:.3f}",
+            f"{sector_macro_f1 - augmented_macro_f1:+.3f} vs finance-augmented",
+        )
     class_metrics = finance_metrics.loc[
         finance_metrics["class"].isin(["Positive", "Neutral", "Negative"])
     ].pivot_table(index=["model", "class"], columns="metric", values="value").reset_index()
@@ -1578,6 +1612,59 @@ def render_news_sentiment(data: dict[str, pd.DataFrame], dark_mode: bool) -> Non
     st.caption("The movie-review check tests general-language non-degradation only. It does not validate financial forecasting or the Movie-to-Market event study.")
     with st.expander("Transparent 18-term finance lexicon"):
         st.dataframe(finance_lexicon.rename(columns={"term": "Term", "assigned_score": "Assigned score", "status": "Status"}), width="stretch", hide_index=True)
+    with st.expander(f"Sector-specific sentiment lexicon research extension ({len(sector_lexicon):,} phrases across {sector_lexicon['sector'].nunique()} sectors)"):
+        st.caption(
+            "Student research extension: sector-scoped positive/negative/neutral phrase lists layered on top of "
+            "the finance-augmented VADER score above. Positive and negative phrases are scored ±1.5; neutral "
+            "phrases carry no score. Applied only to headlines tagged with the matching sector, exposed as the "
+            "separate `sector_augmented_sentiment` field so the validated 18-term pathway above is unchanged."
+        )
+        sector_order = sorted(sector_lexicon["sector"].unique())
+        sector_tabs = st.tabs([SECTOR_DISPLAY_NAMES.get(sector, sector) for sector in sector_order])
+        for tab, sector in zip(sector_tabs, sector_order, strict=False):
+            with tab:
+                sector_rows = sector_lexicon[sector_lexicon["sector"] == sector]
+                counts = sector_rows["category"].value_counts()
+                c1, c2, c3 = st.columns(3)
+                c1.metric("Positive phrases", fmt_count(counts.get("positive", 0)))
+                c2.metric("Negative phrases", fmt_count(counts.get("negative", 0)))
+                c3.metric("Neutral phrases", fmt_count(counts.get("neutral", 0)))
+                st.dataframe(
+                    sector_rows[["category", "phrase", "score"]]
+                    .sort_values(["category", "phrase"])
+                    .rename(columns={"category": "Category", "phrase": "Phrase", "score": "Score"}),
+                    width="stretch",
+                    hide_index=True,
+                )
+
+                sector_history = sector_index[sector_index["sector"] == sector].sort_values("date")
+                if "sector_augmented_sentiment" in sector_history.columns and not sector_history.empty:
+                    recent = sector_history.tail(180)
+                    shift = (recent["sector_augmented_sentiment"] - recent["sentiment"]).abs().mean()
+                    tilt = (recent["sector_augmented_sentiment"] - recent["sentiment"]).mean()
+                    direction = "more positive" if tilt > 0 else "more negative" if tilt < 0 else "unchanged"
+                    st.caption(
+                        f"On real {SECTOR_DISPLAY_NAMES.get(sector, sector)} headlines over the last "
+                        f"{len(recent)} trading days, this lexicon shifts the average day-level sentiment score "
+                        f"by {shift:.3f} (mean absolute change) and leans the sector index {direction} on net "
+                        f"({tilt:+.3f}) relative to the finance-augmented baseline."
+                    )
+                    trend_fig = go.Figure()
+                    trend_fig.add_trace(
+                        go.Scatter(
+                            x=recent["date"], y=recent["sentiment"], mode="lines",
+                            name="Finance-augmented", line=dict(color=accent("cyan", dark_mode), width=1.8),
+                        )
+                    )
+                    trend_fig.add_trace(
+                        go.Scatter(
+                            x=recent["date"], y=recent["sector_augmented_sentiment"], mode="lines",
+                            name="Sector-augmented", line=dict(color=accent("purple", dark_mode), width=1.8, dash="dot"),
+                        )
+                    )
+                    st.plotly_chart(add_plot_layout(trend_fig, dark_mode, height=260), width="stretch")
+                else:
+                    st.caption("Sector-augmented sentiment history is not available yet for this sector; rerun the pipeline to populate it.")
 
 
 def render_movie_lab(data: dict[str, pd.DataFrame], dark_mode: bool) -> None:

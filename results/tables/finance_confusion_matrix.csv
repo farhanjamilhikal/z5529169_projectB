@@ -17,3 +17,12 @@ finance_augmented_vader,Neutral,Negative,30
 finance_augmented_vader,Negative,Positive,31
 finance_augmented_vader,Negative,Neutral,30
 finance_augmented_vader,Negative,Negative,60
+sector_augmented_vader,Positive,Positive,210
+sector_augmented_vader,Positive,Neutral,109
+sector_augmented_vader,Positive,Negative,29
+sector_augmented_vader,Neutral,Positive,153
+sector_augmented_vader,Neutral,Neutral,343
+sector_augmented_vader,Neutral,Negative,35
+sector_augmented_vader,Negative,Positive,32
+sector_augmented_vader,Negative,Neutral,27
+sector_augmented_vader,Negative,Negative,62

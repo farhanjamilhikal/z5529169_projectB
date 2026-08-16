@@ -795,3 +795,388 @@ finance_augmented_vader,FLV00989,8/5/23,NEE,Utilities,5 Incredible Dividend Stoc
 finance_augmented_vader,FLV00993,8/15/23,DUK,Utilities,"Ex-Dividend Reminder: Duke Energy, U.S. Physical Therapy and Amgen",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
 finance_augmented_vader,FLV00995,10/31/23,NEE,Utilities,3 Low-Beta Stocks That Promise Steady Upside Potential,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
 finance_augmented_vader,FLV01000,12/16/23,NEE,Utilities,Start 2024 Off Right With These 3 Energy Stocks,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00002,2/12/20,TMUS,Comm,Here's Why Telecom Infrastructure Stocks Surged on Tuesday,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00003,3/2/20,EA,Comm,"Electronic Arts shares are trading higher, not currently seeing company-specific news. NOTE: Markets continue to be volatile amid the global coronavirus outbreak.",Neutral,Positive,True,"Reviewer 1 (macro/trading desk): EA shares trading higher = positive price action, traded the move. Reviewer 2 (fundamental desk): No company-specific catalyst cited; move is macro-driven coronavirus volatility, not EA-specific. Adjudication: Neutral — headline lacks firm-specific signal, pure market beta."
+sector_augmented_vader,FLV00004,3/13/20,CMCSA,Comm,TV Networks Face Huge Drop In Key Programming Category: Live Sports,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00006,3/24/20,TMUS,Comm,Report: Softbank Asset Sales to Include Selling Billions in Alibaba Stock,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00008,4/27/20,TMUS,Comm,"Verizon, Cox extend customer payment concessions through June due to coronavirus",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00011,6/3/20,T,Comm,Telus director Stockwell Day steps down after likening racism to childhood bullying,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00013,6/19/20,TMUS,Comm,Deutsche Telekom resilient to coronavirus pandemic - CEO,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00014,7/8/20,T,Comm,AMC Nears Deal to Stave Off Bankruptcy,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00015,7/12/20,T,Comm,3 Moneymaker Stocks to Buy If the Market Crashes,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00021,10/5/20,T,Comm,3 Dividend Aristocrats That Can Withstand Any Election Volatility,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00023,10/22/20,T,Comm,"AT&T takes pandemic hit, but surpasses revenue expectations",Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00026,12/14/20,TTWO,Comm,Electronic Arts Outbids Take-Two Interactive for Developer Codemasters in $1.2 Billion Deal,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00030,1/25/21,T,Comm,3 High-Yield Dividend Stocks That'll Make You Richer in 2021,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00031,2/25/21,CMCSA,Comm,"Sky's concerns about O2-Virgin Media merger in UK addressed, says O2 CEO",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00036,5/12/21,EA,Comm,US STOCKS-Wall St drops as strong inflation data fuels rate hike bets,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00038,6/1/21,T,Comm,WarnerMedia's CNN plans new streaming service ahead of Discovery merger - WSJ,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00042,7/13/21,T,Comm,3 5G Stocks to Buy in July,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00044,9/8/21,CMCSA,Comm,"NBC fetches $6.5 mln for Super Bowl ads, nearly sells out Beijing Olympics spots",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00048,10/6/21,TTWO,Comm,Here's Why Electronic Arts Is Outperforming Other Gaming Stocks,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00051,12/6/21,T,Comm,3 Ultra-High-Yield Dividend Stocks to Buy Hand Over Fist in December,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00054,2/1/22,TTWO,Comm,Video game publisher Electronic Arts lowers annual adjusted sales forecast,Neutral,Negative,True,"Reviewer 1: EA lowering sales forecast = sector-wide demand weakness signal, negative read-through for TTWO/sector. Reviewer 2: EA-specific guidance cut, not indicative of TTWO's own pipeline (competitor-specific). Adjudication: Neutral — idiosyncratic to EA, no read-across to TTWO proven."
+sector_augmented_vader,FLV00055,2/7/22,TTWO,Comm,Take-Two Interactive Software Inc Q3 Profit Declines,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00060,5/10/22,T,Comm,Warner Bros. Discovery: Is This New Entertainment Stock a Good Investment?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00062,6/9/22,CMCSA,Comm,"The Zacks Analyst Blog Highlights Mastercard, Comcast, NextEra Energy, Mondelez International, and Freeport-McMoRan",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00064,8/1/22,T,Comm,4 Dividend Paying Stocks to Buy in August,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00067,9/8/22,TMUS,Comm,T-Mobile (TMUS) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00068,9/19/22,TTWO,Comm,US STOCKS-Wall Street ends choppy session higher with focus firmly on Fed,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00072,11/15/22,T,Comm,Is Now the Time to Buy AT&T Stock?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00074,1/27/23,T,Comm,"AT&T Stock Looks Cheap, but There's a Big Problem",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00077,3/29/23,T,Comm,Should iShares MSCI USA Value Factor ETF (VLUE) Be on Your Investing Radar?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00078,4/17/23,TTWO,Comm,3 Stocks to Buy That Could Be the Next Gaming Phenomenon,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00080,5/4/23,CMCSA,Comm,Hollywood studios push back against striking writers' claim of 'gig' workforce,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00083,7/7/23,CMCSA,Comm,Add Up The Pieces: CSM Could Be Worth $56,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00085,7/12/23,T,Comm,"After Hours Most Active for Jul 12, 2023 : AAPL, QQQ, PCG, AMZN, GOOGL, INTC, CMCSA, BP, TFC, KO, T, HBI",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00086,7/18/23,TMUS,Comm,Will Higher Revenues Augment Nokia's (NOK) Q2 Earnings?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00088,7/25/23,T,Comm,3 Red Flags for AT&T's Future,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00089,7/28/23,CMCSA,Comm,Keybanc Maintains Comcast Corp - (CMCSA) Overweight Recommendation,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00091,8/3/23,TTWO,Comm,"Earnings, Inflation Data Make For Volatile Week Ahead",Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00093,8/7/23,T,Comm,3 â€˜Strong Buyâ€™ Stocks You Should Be Loading Up On Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00096,10/20/23,TMUS,Comm,Interesting TMUS Put And Call Options For December 15th,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00098,11/1/23,TTWO,Comm,Analysts Estimate Take-Two Interactive (TTWO) to Report a Decline in Earnings: What to Look Out for,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00102,2/28/20,NKE,Consumer,NBA Legend Kobe Bryant Reportedly to Be Honored With Special Edition Nike Shoe,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00104,3/20/20,SBUX,Consumer,Quick-Service Restaurants See an 11% Traffic Boost From Coronavirus,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00105,3/23/20,DIS,Consumer,Disney Looks to Raise $6 Billion in New Debt,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00108,4/10/20,DIS,Consumer,"Most Active Equity Options For Midday - Friday, April 10",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00110,4/24/20,DIS,Consumer,Virus-hit Madame Tussauds owner raises 500 million euros in bond sale,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00113,5/12/20,DIS,Consumer,Disney Plans Another Bonds Offering With A Six-Part Deal,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00118,6/24/20,WMT,Consumer,Should You Buy Fastly Stock Now?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00120,7/2/20,KO,Consumer,"U.S. Supreme Court takes up Nestle, Cargill appeals over human rights claims",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00121,7/9/20,DIS,Consumer,Watch These 2 Sport Stocks Closely in July,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00126,9/24/20,DIS,Consumer,Amazon's Fire TV Gets a Makeover to Better Compete With Roku,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00133,1/5/21,NKE,Consumer,"Forget Under Armour, Nike Is the Better Athletic Apparel Stock",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00134,2/1/21,WMT,Consumer,7 Blue Chip Stocks to Help Prepare For Your Retirement,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00135,2/27/21,DIS,Consumer,Buffett and His Proteges Take Opposite Sides in the 5G Wars,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00136,3/1/21,KO,Consumer,7 Safe Stocks You Can Hold Onto Forever,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00145,9/8/21,WMT,Consumer,Walmart To Participate In Barclays 2021 Global Consumer Staples Conference At 11:20 AM ET,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00149,10/14/21,WMT,Consumer,"U.S. Senator Warren urges Amazon breakup, India retailers want probe after Reuters story",Neutral,Negative,True,Reviewer 1: Anti-trust probes against Amazon = relative win for WMT (market-share gain narrative). Reviewer 2: Regulatory overhang is sector-wide risk; WMT not immune to probe spillover or margin pressure. Adjudication: Neutral — regulatory headline benefits no single player definitively.
+sector_augmented_vader,FLV00154,1/29/22,NKE,Consumer,2 Reasons to Buy Roblox Stock,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00159,5/18/22,KO,Consumer,"Have $1,000? 2 Warren Buffett Stocks to Buy",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00160,6/7/22,DIS,Consumer,"Disney Stock: ""This Is Where the Fun Begins""",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00162,7/12/22,KO,Consumer,"Top Stock Reports for Coca-Cola, Merck & Toyota Motor",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00165,7/25/22,WMT,Consumer,"Top Stock Reports for Amazon.com, Walmart & Bank of America",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00170,8/31/22,SBUX,Consumer,"U.S. Politicians Bought PG, ABBV & SBUX Stocks in August",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00171,9/3/22,DIS,Consumer,Disney Is At a 5-Year Low -- Time to Buy?,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00172,9/20/22,DIS,Consumer,Is Disney Stock a Buy?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00173,10/26/22,WMT,Consumer,U.S. state attorneys general probing Kroger deal for Albertsons,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00175,11/4/22,SBUX,Consumer,Why Starbucks Stock Surged Today,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00178,1/31/23,KO,Consumer,Is Visa Stock a Buy?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00179,3/2/23,DIS,Consumer,S.Africa's MultiChoice and Comcast to create Africa-wide streaming service,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00181,4/3/23,WMT,Consumer,"Walmart to cut over 2,000 jobs in e-commerce warehouses - Bloomberg News",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00183,4/14/23,NKE,Consumer,History Shows Investors Shouldnâ€™t Overreact to Anheuser-Busch 'Brew-haha',Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00184,5/8/23,NKE,Consumer,7 Dividend Stocks That Will Pay You Through Any Market Turmoil,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00185,5/19/23,NKE,Consumer,iShares S&P 500 Value ETF Experiences Big Outflow,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00186,6/19/23,SBUX,Consumer,"3 Stocks I Will ""Never"" Sell",Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00189,7/26/23,KO,Consumer,Will Coca-Cola Stock Move To New Highs Or Fall Flat In 2023?,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00194,9/11/23,WMT,Consumer,KKR raises stake in Indian billionaire Ambani's Reliance Retail with $250 mln,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00199,11/14/23,DIS,Consumer,Pilgrim's Pride and Malibu Boats have been highlighted as Zacks Bull and Bear of the Day,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00200,11/27/23,KO,Consumer,5 Stocks You Can Confidently Invest $500 In Right Now,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00204,2/13/20,XOM,Energy,15 Stocks to Buy Based On The 2020 U.S. Presidential Election,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00205,2/25/20,OXY,Energy,Why Did Warren Buffett Buy These 6 Stocks in Q4?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00208,2/27/20,OXY,Energy,14 Energy Stocks Moving In Thursday's Pre-Market Session,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00209,2/28/20,CVX,Energy,"Energy Sector Update for 02/28/2020: PBA, RRC, DRQ, XOM, CVX, COP, SLB, OXY",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00210,3/9/20,OXY,Energy,52 Energy Stocks Moving In Monday's Pre-Market Session,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00218,7/27/20,XOM,Energy,Is Hess Stock a Buy?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00223,11/25/20,XOM,Energy,"After Hours Most Active for Nov 25, 2020 : AAPL, VIAC, ET, TWTR, DIS, XOM, WMB, MSFT, MPLN, CD, INTC, CSCO",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00227,3/4/21,CVX,Energy,Chevron : U.S. Court Affirms Contempt Rulings Against Disbarred Lawyer Behind Ecuadorian Lawsuit,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00235,10/4/21,XOM,Energy,Exxon exodus turns floating 'cube' into Internet meme,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00239,12/7/21,CVX,Energy,US STOCKS-Wall St set to open 1% higher as tech stocks roar back,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00241,1/26/22,CVX,Energy,Shell (RDS.A) Offloads Stake in Deer Park Refinery to Pemex,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00242,2/4/22,CVX,Energy,Kazakhstan wants more oil output to stay at home to tackle fuel problems,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00243,2/10/22,XOM,Energy,"DCP Midstream (DCP) Q4 Earnings Beat Estimates, Revenues Miss",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00245,2/17/22,XOM,Energy,"The Dollar Lost 7.5% Of Its Value Last Year, But These Stocks Are Benefiting",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00246,2/25/22,XOM,Energy,ExxonMobil To Sell Stake In Mobil Producing Nigeria To Seplat Energy; Terms Not Disclosed,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00247,3/7/22,CVX,Energy,3 Commodity Stocks to Avoid Now That Everyone Loves Them,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00248,3/7/22,XOM,Energy,Why Momentum Investors Will Love These 2 Oil Stocks,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00249,3/15/22,OXY,Energy,Occidental Petroleum (OXY) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00250,3/29/22,XOM,Energy,"Energy Sector Update for 03/29/2022: MUR, XOM, PBR",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00253,4/29/22,XOM,Energy,"IVE, XOM, CVX, BMY: ETF Inflow Alert",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00256,5/25/22,XOM,Energy,Exxon shareholders back board and vote against accelerating carbon emission cuts,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00258,6/17/22,COP,Energy,"Equinor, partners mull 1 GW offshore wind farm to power oil fields",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00260,6/23/22,XOM,Energy,ExxonMobil (XOM) Agrees to Develop North Field East Project,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00262,7/11/22,XOM,Energy,3 Stocks to Avoid This Week,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00264,7/14/22,SLB,Energy,Schlumberger (SLB) Shares Enter Oversold Territory,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00266,8/2/22,COP,Energy,Canadian Natural (CNQ) to Report Q2 Results: What Awaits?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00267,8/25/22,XOM,Energy,Here's Why Exxon Mobil (XOM) is an Attractive Investment Bet,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00268,9/1/22,XOM,Energy,3 Hot Hydrogen Stocks to Buy in September,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00272,10/31/22,SLB,Energy,"Energy Sector Update for 10/31/2022: SHEL, HLX, HAL, SLB, LIN, XLE, USO, UNG",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00273,11/13/22,CVX,Energy,3 Warren Buffett Dividend Stocks That Are Still Dirt Cheap,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00274,11/16/22,XOM,Energy,3 Highly Ranked Dividend Aristocrat Stocks to Buy Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00275,12/1/22,COP,Energy,"Zacks Investment Ideas feature highlights: ConocoPhillips, Atmos Energy and EOG Resources",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00278,1/22/23,CVX,Energy,"If I Could Buy Only 1 Stock, This Would Be It",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00279,2/23/23,OXY,Energy,Invest Like Warren Buffett With These ETFs,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00282,3/29/23,CVX,Energy,Why $60 Oil Is No Problem for Chevron,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00283,4/3/23,OXY,Energy,"US STOCKS-Wall Street mixed as inflation concerns resurface, energy stocks jump",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00287,7/3/23,SLB,Energy,"US STOCKS-.Wall St ends little changed in shortened session, Tesla jumps",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00293,8/24/23,CVX,Energy,Interesting CVX Put And Call Options For October 6th,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00297,10/13/23,CVX,Energy,GLOBAL LNG-Asia spot LNG prices rise as geopolitical tensions fuel supply woes,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00301,3/12/20,MS,Financials,"Shares of several global financial services companies are trading lower as global concerns of the coronavirus continue to grow. The sector has been negatively impacted, as the virus has disrupted economic conditions and hampered growth outlook.",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00303,4/17/20,GS,Financials,"BUZZ-U.S. STOCKS ON THE MOVE-Schlumberger, Banks, Spirit AeroSystems, State Street",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00306,6/10/20,WFC,Financials,Healthpeak Properties Floating $600 Million in Fresh Debt,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00307,6/22/20,GS,Financials,Lemonade IPO: Itâ€™s All About AI (Artificial Intelligence),Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00311,10/9/20,V,Financials,"Investing $1,000 in These 3 Stocks Would Be a Really Smart Move Right Now",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00312,10/14/20,WFC,Financials,Wells Fargo profit drops as COVID-19 pandemic weighs on growth,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00313,10/24/20,GS,Financials,3 Reasons You Shouldn't Invest Like Warren Buffett,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00314,11/19/20,V,Financials,3 ETFs Perfect for Robinhood Investors,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00315,12/21/20,WFC,Financials,"Despite 56% Gains Since March, U.S Bancorp Stock Can Still Grow",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00316,1/4/21,WFC,Financials,"Wells Fargo's Preferred Stock, Series O Crosses Above 5% Yield Territory",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00318,1/20/21,MS,Financials,"US STOCKS-S&P 500, Nasdaq scale highs as Netflix jumps, Biden inaugurated",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00322,3/31/21,MS,Financials,Big banks win dismissal of U.S. Treasury rigging litigation,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00323,4/1/21,MS,Financials,Morgan Stanley plans to raise dividend when Fed allows -letter,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00327,5/27/21,MS,Financials,Wall Street bank CEOs face fee criticism in second round with Congress,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00328,5/31/21,GS,Financials,EXCLUSIVE-Qatar Petroleum hires banks to run 'jumbo' bond sale in June,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00332,8/18/21,USB,Financials,3 Stocks Warren Buffett Is Selling That You Should Be Buying Hand Over Fist,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00333,8/19/21,GS,Financials,Goldman Sachs To Acquire NN Investment Partners - Quick Facts,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00337,9/8/21,V,Financials,"After Hours Most Active for Sep 8, 2021 : CPNG, AAPL, VEON, NLOK, ELAN, V, ENDP, CMCSA, HL, BAC, PINS, CAR",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00339,10/14/21,MS,Financials,GLOBAL MARKETS-Inflation angst lifts stocks but reins back dollar,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00340,10/29/21,V,Financials,Why Marqeta Stock Is Soaring 26% This Week,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00341,11/17/21,V,Financials,US STOCKS-Wall Street set to open flat as investors assess rate hike prospects,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00347,2/22/22,MS,Financials,Oaktree hires Morgan Stanley to find investor in Italy's Banca Progetto - sources,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00349,3/24/22,USB,Financials,This Beaten-Down Warren Buffett Stock Is One to Hold Forever,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00351,7/5/22,MS,Financials,3 Hydrogen Stocks to Buy for the $11 Trillion Breakout,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00353,7/15/22,MS,Financials,"Why Shares of JPMorgan Chase, Morgan Stanley, and Goldman Sachs Rose Today",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00354,7/29/22,WFC,Financials,"The Zacks Analyst Blog Highlights Wells Fargo, Matador Resources, Cintas, Truist Financial and MSCI",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00355,8/2/22,MS,Financials,Here's The Big Reason Why SVB Financial Faces Some Tough Times Ahead,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00356,9/15/22,GS,Financials,Prada CEO says no decision yet on dual listing in Milan -report,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00363,1/3/23,USB,Financials,"After Hours Most Active for Jan 3, 2023 : AMZN, PYPL, Z, AAPL, ACWI, PDD, CF, ELAN, USB, BEKE, BBD, KSS",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00367,2/8/23,WFC,Financials,2 of the Fastest-Growing Stocks to Buy Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00368,2/17/23,MS,Financials,U.S. IPO pick-up offers hope of market re-open,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00370,3/6/23,V,Financials,How GICS Changes Will Impact Popular Sector ETFs,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00373,3/24/23,WFC,Financials,Wells Fargo (WFC) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00374,4/14/23,WFC,Financials,Wells Fargo & Co Q1 23 Earnings Conference Call At 10:00 AM ET,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00377,5/1/23,WFC,Financials,What Stocks To Buy Today? 2 Bank Stocks To Watch,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00381,6/6/23,USB,Financials,3 High-Yield Values Ready To Rebound,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00384,7/3/23,WFC,Financials,"US STOCKS-Wall St ends slightly higher in shortened session, Tesla jumps",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00385,7/4/23,V,Financials,Is Visa Stock Undervalued?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00386,7/7/23,GS,Financials,"JetBlue Ends Alliance With American, Chance Of Spirit Merger?",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00389,8/28/23,GS,Financials,These 2 Stocks Led the Dow Jones Industrials Higher Monday,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00392,10/13/23,WFC,Financials,"Big Banks Beat in Q3, Import Prices Lower",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00394,10/17/23,GS,Financials,CANADA STOCKS-TSX futures fall ahead of domestic CPI data,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00395,11/8/23,GS,Financials,Goldman Sachs (GS) Plans to Offload GM Credit Card Program,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00396,11/8/23,MS,Financials,"This 1 Catalyst Could Send Bitcoin Soaring Back to Its All-Time High of $69,000",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00398,11/15/23,GS,Financials,"Top Stock Reports for Oracle, PepsiCo & Salesforce",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00401,1/17/20,GILD,Healthcare,"Zeke Capital Advisors, Llc Buys iShares National Muni Bond ETF, iShares Short-Term National ...",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00402,1/24/20,AMGN,Healthcare,Relative Strength Alert For Amgen,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00403,2/3/20,MRK,Healthcare,iShares Russell 1000 Growth ETF Experiences Big Outflow,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00404,2/4/20,GILD,Healthcare,"'$GILD on call: No knowledge of additional #coronavirus responses to remdesivir. Waiting for clinical data. On manufacturing capacity: ""We are investing heavily to be prepared as best we can.""' -Tweet From STAT's Adam Feuerstein",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00405,2/27/20,GILD,Healthcare,Gilead Sciences (GILD) Surges: Stock Moves 6.6% Higher,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00409,3/19/20,GILD,Healthcare,Better Coronavirus Stock: Gilead Sciences or Regeneron Pharmaceuticals?,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00412,4/2/20,GILD,Healthcare,Can Buffett-Style Investing Succeed Today? Stocks & ETFs to Consider,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00413,4/7/20,ABT,Healthcare,Walgreens to expand drive-through coronavirus testing sites,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00414,4/18/20,ABBV,Healthcare,' Companies With Fast-Growing Earnings,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00415,4/27/20,GILD,Healthcare,"Besides Remdesivir, These 2 COVID-19 Treatments Could Have Promise",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00418,5/13/20,MRK,Healthcare,"The Daily Biotech Pulse: Gilead Signs Manufacturing Deal For Remdesivir, Bristol-Myers Gets Refuse-To-File Letter",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00420,5/17/20,MRK,Healthcare,Wall Street Week Ahead-Investors prepare for more U.S. stock swings as states reopen,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00421,5/19/20,ABT,Healthcare,Is Abbott Labs Stock a Buy After Its COVID-19 Test Controversy?,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00422,5/22/20,MRK,Healthcare,"US Health Official Says Vaccines From J&J, Sanofi, Merck May Be Added This Summer As They Complete Phase 1 Safety Studies",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00423,6/10/20,GILD,Healthcare,GILD Named A Top Socially Responsible Dividend Stock,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00425,6/25/20,GILD,Healthcare,Interesting GILD Put And Call Options For August 7th,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00426,7/24/20,ABBV,Healthcare,"ESGV, FB, ABBV, COST: ETF Inflow Alert",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00428,8/16/20,ABT,Healthcare,3 Dividend Stocks Yielding More Than 4% That Are Safe Buys Right Now,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00430,10/16/20,GILD,Healthcare,NIH tests therapies to help cut hospital stays for COVID-19 patients,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00434,12/23/20,MRK,Healthcare,"US STOCKS-S&P, Dow rise as weekly jobless claims dip; Nasdaq retreats",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00436,1/27/21,MRK,Healthcare,Relative Strength Alert For Merck,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00438,5/4/21,GILD,Healthcare,"Eli Lilly to supply 400,000 tablets of its COVID-19 treatment to India",Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00441,8/27/21,ABT,Healthcare,"FOCUS-U.S. COVID-19 tests again in short supply as infections soar, schools reopen",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00443,10/19/21,ABBV,Healthcare,3 Leading Healthcare Stocks to Buy in 2021 and Beyond,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00446,11/20/21,MRK,Healthcare,Is Merck Stock a Buy?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00447,1/7/22,MRK,Healthcare,Todayâ€™s Biggest Pre-Market Stock Movers: 10 Top Gainers and Losers on Friday,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00453,3/7/22,GILD,Healthcare,Gilead: Phase 3 TROPiCS-02 Study Meets Primary Endpoint,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00462,7/19/22,AMGN,Healthcare,Is Trending Stock Amgen Inc. (AMGN) a Buy Now?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00466,10/12/22,MRK,Healthcare,3 Dividend Stocks in Warren Buffett's Secret Portfolio Most Likely to Soar in Q4,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00467,10/18/22,MRK,Healthcare,Will This News Send Moderna's Stock Soaring?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00469,10/25/22,MRK,Healthcare,Spain antitrust watchdog fines Merck 39 mln euros in contraceptives case,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00471,12/8/22,ABBV,Healthcare,AbbVie (ABBV) Gains But Lags Market: What You Should Know,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00474,12/16/22,MRK,Healthcare,"FDA Delays Decision on AstraZeneca (AZN), Merck's Lynparza sNDA",Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00478,2/27/23,ABBV,Healthcare,AbbVie Inc. (ABBV) is Attracting Investor Attention: Here is What You Should Know,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00480,3/14/23,AMGN,Healthcare,Amgen (AMGN) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00481,3/21/23,AMGN,Healthcare,Amgen (AMGN) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00483,6/6/23,MRK,Healthcare,"Health Care Sector Update for 06/06/2023: HOTH, DOCS, MRK, NRXP",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00484,6/16/23,AMGN,Healthcare,Validea Detailed Fundamental Analysis - AMGN,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00487,7/6/23,MRK,Healthcare,Guru Fundamental Report for MRK,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00489,7/17/23,ABBV,Healthcare,AbbVie Inc. (ABBV) is Attracting Investor Attention: Here is What You Should Know,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00490,7/21/23,AMGN,Healthcare,The 3 Most Undervalued Pharma Stocks to Buy Now: July 2023,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00495,10/30/23,GILD,Healthcare,Gilead Sciences (GILD) Outperforms Broader Market: What You Need to Know,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00496,11/9/23,GILD,Healthcare,Deutsche Bank Initiates Coverage of Gilead Sciences (GILD) with Hold Recommendation,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00498,12/1/23,ABT,Healthcare,Peter Lynch Detailed Fundamental Analysis - ABT,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00499,12/12/23,AMGN,Healthcare,Validea Detailed Fundamental Analysis - AMGN,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00500,12/16/23,ABBV,Healthcare,3 of the Most Attractive Dividend Stocks in the Pharma Space,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00502,3/10/20,BA,Industrials,Why Shares of Boeing Are Down Today,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00503,3/14/20,MMM,Industrials,Why You Should Avoid These Cheap Stocks,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00505,3/26/20,GE,Industrials,General Electric Stock May Double Despite Aerospace Woes,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00506,4/28/20,UPS,Industrials,United Parcel Services shares are trading lower after the company reported worse-than-expected Q1 EPS results.,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00508,5/4/20,BA,Industrials,Why Shares of Boeing Are Down Today,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00512,7/16/20,UPS,Industrials,Is FedEx Stock a Buy?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00515,8/31/20,GE,Industrials,"After Hours Most Active for Aug 31, 2020 : KODK, ZM, AAPL, TSLA, PCG, INTC, GE, MXIM, AR, NIO, QQQ, BKU",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00516,10/18/20,BA,Industrials,Airbus Is Crushing Boeing on Aircraft Deliveries,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00519,10/31/20,GE,Industrials,Three banks seal merger to form Hungary's No.2 banking group,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00520,11/4/20,CAT,Industrials,Wall St seeks safety of Big Tech as election hangs in the balance,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00522,11/21/20,MMM,Industrials,3 Dividend Stocks That Will Be Winners From a Coronavirus Vaccine,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00523,12/9/20,BA,Industrials,Is It Time to Buy the Dow Jones' 3 Worst Performing Stocks of 2020?,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00528,1/4/21,BA,Industrials,Aviation reinsurance rates rise by up to 250% - report,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00536,4/22/21,GE,Industrials,NVIDIA's Relationship With Healthcare Is Worth More Than You Think,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00542,8/27/21,GE,Industrials,Will Johnson Controls Stock Continue To Make Fresh Highs?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00544,10/26/21,GE,Industrials,"4 Top Stock Trades for Wednesday: DKNG, GE, LMT, OCGN",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00545,10/27/21,UPS,Industrials,UPS (NYSE:UPS) is Keeping its Debt under Control,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00547,11/30/21,MMM,Industrials,MMM Enters Oversold Territory,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00549,12/28/21,BA,Industrials,Indonesia to allow Boeing's 737 MAX to fly again after fatal crash,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00550,12/31/21,GE,Industrials,"Global M&A volumes hit record high in 2021, breach $5 trillion for first time",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00554,2/8/22,BA,Industrials,"TransDigm's (TDG) Q1 Earnings Miss Estimates, Sales Rise Y/Y",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00555,3/7/22,BA,Industrials,Boeing halts purchase of titanium from Russia,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00558,5/5/22,BA,Industrials,Ryanair has no plans yet for new bond issue,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00563,9/13/22,GE,Industrials,"GE Healthcare, Lantheus: Trial Finds Flurpiridaz PET Radiotracer Could Improve CAD Detection",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00566,10/11/22,UPS,Industrials,Does United Parcel Service (NYSE:UPS) Deserve A Spot On Your Watchlist?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00568,10/17/22,CAT,Industrials,Caterpillar (CAT) Gains But Lags Market: What You Should Know,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00577,3/10/23,CAT,Industrials,"US STOCKS-Futures mixed as SVB extends rout, payrolls data on tap",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00578,3/15/23,CAT,Industrials,Caterpillar Stock Appears To Be A Better Pick Over This Pharmaceuticals Giant,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00579,3/27/23,GE,Industrials,UK's competition watchdog to look into EDF-General Electric deal,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00582,5/18/23,GE,Industrials,General Electric Co. Shares Near 52-Week High - Market Mover,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00583,6/14/23,MMM,Industrials,Why Big Brands Make Terrible Investments,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00588,7/26/23,UPS,Industrials,"UPS labor deal could pressure delivery firm's annual outlook, say analysts",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00589,8/6/23,MMM,Industrials,What's Next For Johnson Controls Stock After An 8% Fall Yesterday?,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00591,8/23/23,CAT,Industrials,General Electric (GE) Unit to Upgrade Xiangjiaba Plant in China,Neutral,Positive,True,"Reviewer 1: China plant upgrade = capex/infrastructure tailwind, read as CAT-linked. Reviewer 2: Headline explicitly names GE unit upgrading Xiangjiaba plant — mis-mapped to CAT ticker; no CAT-specific signal. Adjudication: Neutral — headline is GE news, not CAT; no valid CAT catalyst."
+sector_augmented_vader,FLV00597,11/10/23,BA,Industrials,Dubai to showcase demand for jets under shadow of Mideast tensions,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00599,11/29/23,MMM,Industrials,Down 20% This Year Is RTX Stock A Better Pick Than General Electric?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00602,1/13/20,NEM,Materials,"UPDATE: B. Riley FBR Upgrades Newmont To Buy, Raises Target To $48 Sees Co. As 'a viable alternative to generalist investors looking for gold equity exposure' 'With its new industry-leading dividend of over 2.3%, vs. 0.67% for the gold miner ETF (GDX)'",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00604,1/30/20,SHW,Materials,Sherwin-Williams Sees FY20 GAAP EPS $19.91-$20.71 Including $2.79/Share In Costs,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00607,2/24/20,DD,Materials,"Lincluden Management Ltd Buys Centene Corp, Dollar General Corp, Americold Realty Trust, Sells ...",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00609,2/25/20,NEM,Materials,"B. Riley FBR Maintains Buy on Newmont, Raises Price Target to $54",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00611,3/5/20,NUE,Materials,Why Nucor Stock Fell 13% in February,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00612,3/24/20,NEM,Materials,These 3 Value Stocks Are Stupid Cheap,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00613,3/24/20,NUE,Materials,Why Shares of Steelmakers Are Surging Today,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00614,3/30/20,NEM,Materials,3 Resource Stocks to Buy for the Gold Rush,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00616,4/3/20,SHW,Materials,Sherwin-Williams Sees IBD RS Rating Rise To 73,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00617,4/6/20,NUE,Materials,3 Top Infrastructure Stocks to Watch in April,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00621,4/23/20,NEM,Materials,What Lies Ahead for Materials ETFs in Q1 Earnings?,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00622,5/20/20,DD,Materials,"Mason Hawkins' Southeastern Buys Hyatt, DuPont",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00625,5/29/20,NEM,Materials,Ingevity Gains on Capa Buyout Amid Weak Industrial Demand,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00630,10/22/20,DOW,Materials,Dow Reports Decline In Q3 Operating Earnings; Net Sales Down 10% - Quick Facts,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00634,1/3/21,DD,Materials,"DuPont Commences Split-off Exchange Offer For N&B Business, Street Is Bullish",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00635,1/3/21,DD,Materials,"Philippine bourse targets more IPOs, REITs this year on recovery hope",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00636,1/28/21,SHW,Materials,Sherwin-Williams Q4 20 Earnings Conference Call At 11:00 AM ET,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00641,8/4/21,NEM,Materials,3 Dirt-Cheap Gold Stocks to Buy Right Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00642,8/30/21,NUE,Materials,3 Infrastructure Stocks to Buy Right Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00653,4/3/22,SHW,Materials,3 Unstoppable Dividend Aristocrats Begging to Be Bought in April,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00659,7/21/22,NUE,Materials,Nucor Breaks Above 200-Day Moving Average - Bullish for NUE,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00660,7/26/22,DD,Materials,Analysts Estimate DuPont de Nemours (DD) to Report a Decline in Earnings: What to Look Out for,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00661,8/31/22,SHW,Materials,Sherwin-Williams (SHW) Dips More Than Broader Markets: What You Should Know,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00662,10/17/22,NEM,Materials,Newmont Corporation (NEM) Gains But Lags Market: What You Should Know,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00663,10/18/22,DOW,Materials,Earnings Preview: Chemours (CC) Q3 Earnings Expected to Decline,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00666,11/15/22,DOW,Materials,"Colgate, Twitter And Bath & Body Works Were Third Pointâ€™s Largest Q3 Buys. Find Out What Else They Traded Here",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00681,3/15/23,NUE,Materials,NUE Added as Top 5 Metals Channel Dividend Stock With 1.31% Yield,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00687,5/22/23,NEM,Materials,3 Stellar Stocks That Are Immune to These 2023 Market Meltdowns,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00689,7/1/23,SHW,Materials,MarketBeat Week in Review â€“ 6/26 - 6/30,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00690,7/25/23,NEM,Materials,Is Newmont Stock Attractive Post The Q2 Sell-Off?,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00697,10/30/23,NUE,Materials,Is Most-Watched Stock Nucor Corporation (NUE) Worth Betting on Now?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00699,12/13/23,SHW,Materials,5 Large-Cap Stocks That Are Primed to Outshine the Magnificent 7 in 2024,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00701,1/15/20,AMT,RealEstate,"Elefante Mark B Buys American Tower Corp, UnitedHealth Group Inc, Becton, Dickinson and Co",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00704,2/10/20,PSA,RealEstate,"Sompo Japan Nipponkoa Asset Management Co.,ltd. ...",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00708,3/16/20,O,RealEstate,Shares of several real estate companies are trading lower amid a decline in property transactions after the coronavirus outbreak heavily impacted the sector.,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00709,3/18/20,AMT,RealEstate,' Gurus Outperforming the US Market as Stocks Tumble,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00710,3/23/20,O,RealEstate,Interesting O Put And Call Options For May 15th,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00711,4/23/20,AMT,RealEstate,"Watch Point Trust Co Buys American Tower Corp, NextEra Energy Inc, The Walt Disney Co, Sells ...",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00713,5/6/20,AMT,RealEstate,"Jennison Associates Llc Buys Eli Lilly and Co, Uber Technologies Inc, Goldman Sachs Group Inc, ...",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00714,5/14/20,O,RealEstate,2 Incredibly Cheap Retail REITs,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00715,5/15/20,AMT,RealEstate,"Alphinity Investment Management Pty Ltd Buys Activision Blizzard Inc, FMC Corp, Seagate ...",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00717,6/18/20,O,RealEstate,How to Find the Best Dividend Stocks,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00719,9/26/20,AMT,RealEstate,3 Stocks to Buy and Hold for Decades,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00722,2/8/21,O,RealEstate,Forget Walmart: Here Are 3 Better Dividend Stocks,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00723,2/12/21,PLD,RealEstate,"Earn $1,000 in Monthly Retirement Dividends With 5 Easy Steps",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00724,3/18/21,O,RealEstate,"If You Like Dividends, You Should Love These 2 Stocks",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00727,4/29/21,AMT,RealEstate,"American Tower Raises FY21 Earnings, AFFO View; Cuts Property Revenue Outlook",Neutral,Negative,True,"Reviewer 1: Raised FY21 earnings and AFFO guidance = positive trajectory for AMT. Reviewer 2: Cuts property revenue outlook = top-line weakness, tenant churn risk. Adjudication: Neutral — mixed guidance: earnings up on costs, revenue down on operations; offsetting signals."
+sector_augmented_vader,FLV00728,5/12/21,PLD,RealEstate,Interesting PLD Put And Call Options For May 21st,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00729,6/22/21,O,RealEstate,"Got $2,500? 2 Unstoppable Dividend Stocks to Buy",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00731,7/24/21,O,RealEstate,3 Supercharged Stocks That Can Make You Richer in the Second Half of 2021 (and Beyond),Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00732,8/20/21,PSA,RealEstate,Public Storage Shares Approach 52-Week High - Market Mover,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00733,8/23/21,PLD,RealEstate,Make High-Growth E-Commerce Stocks Pay You 6%,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00737,12/21/21,CCI,RealEstate,The Top 3 REITs in Mobile Towers,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00746,7/2/22,O,RealEstate,"Want $2,000 in Passive Income the Easy Way? Here's Where to Invest",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00758,10/5/22,CCI,RealEstate,Crown Castle International Corp Shares Fall 3.8% Below Previous 52-Week Low - Market Mover,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00765,12/21/22,O,RealEstate,AAT vs. O: Which Stock Is the Better Value Option?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00769,2/16/23,O,RealEstate,2 Appealing Stocks That Pay Monthly Cash,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00776,3/21/23,AMT,RealEstate,American Tower (AMT) Stock Sinks As Market Gains: What You Should Know,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00779,4/13/23,O,RealEstate,7 Blue-Chip Stocks That Pay You Monthly Dividends,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00780,4/23/23,PSA,RealEstate,3 Super Safe Dividend Stocks Yielding 4%+ to Buy Right Now,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00781,5/9/23,PLD,RealEstate,Why Prologis is a Top 25 Dividend Giant (PLD),Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00784,7/3/23,AMT,RealEstate,The 3 Best Stocks to Invest in Before Bidenâ€™s Broadband Plan Takes Off,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00788,8/8/23,AMT,RealEstate,3 High-Yield Tech Stocks to Buy in August,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00790,8/18/23,AMT,RealEstate,"IYR, PLD, AMT, EQIX: ETF Outflow Alert",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00791,8/23/23,O,RealEstate,"Have $1,000? 2 All-Weather Dividend Stocks to Buy and Hold Forever",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00794,10/4/23,PLD,RealEstate,Smart Defense: 7 REITs to Shield Your Portfolio From Todayâ€™s Turbulence,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00796,10/18/23,CCI,RealEstate,Crown Castle International Corp Shares Fall 2.4% Below Previous 52-Week Low - Market Mover,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00798,11/13/23,PSA,RealEstate,Public Storage's Preferred Share Series O Cross 6% Yield Mark,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00803,2/19/20,NVDA,Tech,Unfazed FAANGs: Pullback In Apple Didn't Carry Over To Other Big Tech Names,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00806,4/14/20,QCOM,Tech,3 of the Safest Dividend Stocks to Buy During the Coronavirus Bear Market,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00807,4/24/20,INTC,Tech,U.S. stock futures rise at the end of stormy week,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00816,10/20/20,INTC,Tech,Intel Sells Its NAND Memory Business to SK Hynix for $9 Billion,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00817,11/3/20,INTC,Tech,"After Hours Most Active for Nov 3, 2020 : QQQ, AAPL, SQQQ, NIO, INTC, AAL, TME, IQ, FHN, BMY, KO, GE",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00818,11/4/20,INTC,Tech,Intel's Stock Won't Rally Until These 3 Things Happen,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00820,12/31/20,QCOM,Tech,7 Cheap Stocks That Canâ€™t Wait for 2021,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00821,4/15/21,INTC,Tech,"EU antitrust regulators to decide on $9 bln SK Hynix, Intel deal by May 20",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00822,6/3/21,AMD,Tech,5 Best Value Stocks to Get Your Hands on for June,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00824,6/29/21,INTC,Tech,Intel Corporation's (NASDAQ:INTC) Intrinsic Value Is Potentially 63% Above Its Share Price,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00828,9/4/21,NVDA,Tech,3 Tech Hardware Stocks to Buy After Earnings,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00829,10/21/21,NVDA,Tech,3 Semiconductor Stocks to Buy on the Dips Going Into 2022,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00832,1/4/22,AMD,Tech,Why AMD Stock Dropped More Than 5% Today,Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00833,1/19/22,INTC,Tech,Intel orders ASML machine still on drawing board as chipmakers look for an edge,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00834,2/1/22,AMD,Tech,"After Hours Most Active for Feb 1, 2022 : AAPL, AMD, F, C, AEPPL, PM, VICI, CMCSA, RIG, T, QQQ, MSFT",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00836,2/14/22,NVDA,Tech,The S&P 500 ends down as Russia-Ukraine tensions heat up,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00837,2/15/22,NVDA,Tech,4 Top Semiconductor Stocks To Watch Today,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00842,5/11/22,INTC,Tech,"After Hours Most Active for May 11, 2022 : QQQ, AAPL, TAL, PBR, LUMN, VTRS, INTC, UBER, MSFT, ERIC, DIS, ATUS",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00849,8/30/22,INTC,Tech,Alphabet (GOOGL) Launches Rider-Only Service in Downtown Phoenix,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00851,9/9/22,QCOM,Tech,Qualcomm a Top Socially Responsible Dividend Stock With 2.3% Yield (QCOM),Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00852,9/18/22,INTC,Tech,3 Once-In-a-Generation Buying Opportunities In the Nasdaq Bear Market,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00853,9/27/22,QCOM,Tech,Qualcomm Stock Is a Buy but Not Because of Its Automotive Segment,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00854,10/4/22,AMD,Tech,Semiconductor Stocks Soar on Potential Chip Export Curbs on China,Positive,Negative,True,"Reviewer 1: Chip export curbs on China = AMD gains share domestically, stocks soaring on news = positive price action. Reviewer 2: China TAM (total addressable market) loss = long-term revenue headwind, structurally negative. Adjudication: Positive — immediate price action and share-gain narrative dominates; TAM loss is longer-dated uncertainty."
+sector_augmented_vader,FLV00859,12/2/22,NVDA,Tech,"Why Nvidia, Alphabet, and Other Tech Stocks Slumped Friday",Negative,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00860,12/28/22,INTC,Tech,Intel's (INTC) New GPUs Pose Threat to AMD's Market Share,Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00864,2/13/23,INTC,Tech,"After Hours Most Active for Feb 13, 2023 : PLTR, AEHA, AMD, BEKE, AMZN, AAPL, CSCO, INTC, BAC, IBN, VZ, T",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00868,3/13/23,NVDA,Tech,3 Tech Titans Making Noise Within AI,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00870,4/3/23,NVDA,Tech,Micron (MU) Caught in the Cross Fire of US-China Tech War,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00872,5/4/23,NVDA,Tech,"Biden meets Microsoft, Google CEOs on AI dangers",Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00873,5/4/23,QCOM,Tech,Qualcomm amplifies chip gloom with 'sobering report',Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00874,5/30/23,NVDA,Tech,Are You Looking for a Top Momentum Pick? Why Nvidia (NVDA) is a Great Choice,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00877,6/8/23,AMD,Tech,Is It Too Late to Buy AMD Stock?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00882,8/4/23,NVDA,Tech,"ANALYSIS-While AI takes the spotlight, infrastructure stocks shine",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00883,8/17/23,NVDA,Tech,Is It Too Late to Buy AMD Stock?,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00885,8/31/23,NVDA,Tech,"Tesla Stock Forecast: The Good, the Bad, and the Ugly",Neutral,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00888,9/20/23,NVDA,Tech,1 Top Semiconductor Stock That's Too Cheap to Ignore,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00892,10/10/23,INTC,Tech,What's in the Offing for SMART Global (SGH) in Q4 Earnings?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00894,10/12/23,NVDA,Tech,This Magnificent High-Yield Dividend Stock Is Actually an Under-the-Hood Artificial Intelligence (AI) Play,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00897,11/16/23,NVDA,Tech,3 Long-Term Stocks Youâ€™ll Regret Not Buying Soon: November 2023,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00899,12/5/23,QCOM,Tech,SoftBank Corp buys $514 mln majority stake in car software firm Cubic Telecom,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00904,1/29/20,SO,Utilities,"Top Research Reports for Fomento Economico, Southern & DISH",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00905,2/1/20,NEE,Utilities,Why Retirees Can't Afford to Miss This Stock,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00906,2/3/20,SO,Utilities,Alabama Power leaders named to national innovation commission,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00914,4/16/20,DUK,Utilities,"Duke Energy Foundation donates $â€“5â€¦,â€¦â€¦â€¦ to help low-income customers in North ...",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00915,4/16/20,SO,Utilities,"Donaldson Capital Management, Llc Buys iShares Short Maturity Bond, Southern Co, Consolidated ...",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00917,5/7/20,NEE,Utilities,Oil Crash 2020: 3 Top Energy Stocks to Buy,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00918,5/13/20,SO,Utilities,"Pictet Asset Management Ltd Buys Digital Realty Trust Inc, FirstEnergy Corp, Exelon Corp, Sells ...",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00926,9/30/20,NEE,Utilities,Why NextEra Energy Stock Fell 5% Today,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00927,10/4/20,NEE,Utilities,This Renewable Energy Stock Ramps Up Its Focus on Solving a Critical Issue,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00928,11/30/20,NEE,Utilities,"Got $1,000? Here Are 2 Great Dividend Stocks for Beginners",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00930,3/5/21,D,Utilities,"Friday 3/5 Insider Buying Report: TDY, D",Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00931,4/4/21,NEE,Utilities,"Forget the Fourth Stimulus Check, These 3 Energy Dividend Aristocrats Will Pay You for Life",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00933,8/6/21,D,Utilities,"Dominion Energy, Inc. Q2 adjusted earnings of $0.76 per share",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00938,12/2/21,NEE,Utilities,Opal Fuels to go public via $1.75 billion SPAC deal,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00948,3/28/22,NEE,Utilities,June 2023 Options Now Available For NextEra Energy (NEE),Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00949,5/5/22,NEE,Utilities,"XLU, NEE, DUK, D: Large Inflows Detected at ETF",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00957,10/5/22,DUK,Utilities,"With A 7.0% Return On Equity, Is Duke Energy Corporation (NYSE:DUK) A Quality Stock?",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00962,11/3/22,NEE,Utilities,"NextEra Energy, Inc. (NEE) is Attracting Investor Attention: Here is What You Should Know",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00964,11/16/22,NEE,Utilities,"Investors Heavily Search NextEra Energy, Inc. (NEE): Here is What You Need to Know",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00966,1/12/23,NEE,Utilities,NextEra Energy (NEE) Gains But Lags Market: What You Should Know,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00968,1/26/23,SO,Utilities,What Awaits National Fuel Gas Company (NFG) in Q1 Earnings?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00969,2/8/23,D,Utilities,Dominion Energy (D) Q4 Earnings & Revenues Surpass Estimates,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00972,3/8/23,SO,Utilities,A Bull Market Is Coming: 3 Stocks Near Their 52-Week Lows to Buy Now,Positive,Negative,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00974,4/6/23,D,Utilities,"Energy Sector Update for 04/06/2023: D, CETY, SHEL",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00975,4/17/23,AEP,Utilities,Algonquin Power ends deal for AEP's Kentucky operations,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00976,4/19/23,AEP,Utilities,PG&E Corp. (PCG) Secures 24% Reduction in Gas Emissions,Negative,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00982,5/10/23,NEE,Utilities,What Awaits Algonquin Power & Utilities (AQN) in Q1 Earnings?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00984,6/27/23,SO,Utilities,DTE vs. SO: Which Stock Is the Better Value Option?,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00985,7/6/23,DUK,Utilities,Duke Energy (DUK) to Divest Commercial DG Business for $364M,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00989,8/5/23,NEE,Utilities,5 Incredible Dividend Stocks to Buy Now,Positive,Neutral,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00993,8/15/23,DUK,Utilities,"Ex-Dividend Reminder: Duke Energy, U.S. Physical Therapy and Amgen",Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV00995,10/31/23,NEE,Utilities,3 Low-Beta Stocks That Promise Steady Upside Potential,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.
+sector_augmented_vader,FLV01000,12/16/23,NEE,Utilities,Start 2024 Off Right With These 3 Energy Stocks,Neutral,Positive,False,Unanimous: reviewer 1 and reviewer 2 agree.

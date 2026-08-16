@@ -357,7 +357,8 @@ def main():
 
     print("Scoring and validating headlines...")
     aligned_news = features.align_headlines_to_trading_days(news, equities["date"])
-    scored, ticker_day = sentiment.score_headlines(aligned_news)
+    sector_lexicon = sentiment.load_sector_lexicon()
+    scored, ticker_day = sentiment.score_headlines(aligned_news, sector_lexicon=sector_lexicon)
     ticker_sector = equities[["ticker", "sector"]].drop_duplicates()
     complete_sentiment = sentiment.complete_ticker_day_panel(
         ticker_day, eq_wide.index, ticker_sector
@@ -423,6 +424,7 @@ def main():
             "ticker",
             "sector",
             "sentiment",
+            "sector_augmented_sentiment",
             "observed_news",
             "article_count",
             "reliability",
@@ -442,6 +444,7 @@ def main():
             for k, v in sentiment.FINANCE_LEXICON.items()
         ]
     ).to_csv(TABLES / "finance_lexicon_extension.csv", index=False)
+    sector_lexicon.to_csv(TABLES / "sector_sentiment_lexicon.csv", index=False)
 
     current = (
         fund_weights.sort_values("date")

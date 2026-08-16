@@ -22,3 +22,14 @@ finance_augmented_vader,f1,Neutral,0.6815101645692159,531
 finance_augmented_vader,precision,Negative,0.5042016806722689,121
 finance_augmented_vader,recall,Negative,0.49586776859504134,121
 finance_augmented_vader,f1,Negative,0.5,121
+sector_augmented_vader,accuracy,overall,0.615,1000
+sector_augmented_vader,macro_f1,overall,0.5821693735897312,1000
+sector_augmented_vader,precision,Positive,0.5316455696202531,348
+sector_augmented_vader,recall,Positive,0.603448275862069,348
+sector_augmented_vader,f1,Positive,0.5652759084791387,348
+sector_augmented_vader,precision,Neutral,0.7160751565762005,531
+sector_augmented_vader,recall,Neutral,0.6459510357815442,531
+sector_augmented_vader,f1,Neutral,0.6792079207920793,531
+sector_augmented_vader,precision,Negative,0.49206349206349204,121
+sector_augmented_vader,recall,Negative,0.512396694214876,121
+sector_augmented_vader,f1,Negative,0.5020242914979757,121

@@ -1,0 +1,743 @@
+sector,category,phrase,score
+Comm,positive,spectrum auction,1.5
+Comm,negative,cord-cutting,-1.5
+Comm,neutral,options begin trading,0.0
+Comm,positive,5G rollout,1.5
+Comm,negative,subscriber loss,-1.5
+Comm,neutral,ex-dividend,0.0
+Comm,positive,subscriber growth,1.5
+Comm,negative,churn,-1.5
+Comm,neutral,13F filing,0.0
+Comm,positive,broadband expansion,1.5
+Comm,negative,capex drag,-1.5
+Comm,neutral,analyst blog,0.0
+Comm,positive,fiber deployment,1.5
+Comm,negative,spectrum cost,-1.5
+Comm,neutral,earnings call,0.0
+Comm,positive,streaming subscriber,1.5
+Comm,negative,debt load,-1.5
+Comm,neutral,conference call,0.0
+Comm,positive,content deal,1.5
+Comm,negative,regulatory probe,-1.5
+Comm,neutral,transcript,0.0
+Comm,positive,merger synergy,1.5
+Comm,negative,antitrust,-1.5
+Comm,neutral,watch,0.0
+Comm,positive,dividend hike,1.5
+Comm,negative,content cost inflation,-1.5
+Comm,neutral,to watch,0.0
+Comm,positive,cash flow,1.5
+Comm,negative,strike,-1.5
+Comm,neutral,mover,0.0
+Comm,positive,ARPU growth,1.5
+Comm,negative,layoffs,-1.5
+Comm,neutral,most active,0.0
+Comm,positive,network upgrade,1.5
+Comm,negative,dividend cut,-1.5
+Comm,neutral,volume,0.0
+Comm,positive,infrastructure build,1.5
+Comm,negative,miss estimates,-1.5
+Comm,neutral,ETF inflow,0.0
+Comm,positive,oversold,1.5
+Comm,negative,weak guidance,-1.5
+Comm,neutral,ETF outflow,0.0
+Comm,positive,undervalued,1.5
+Comm,negative,pricing pressure,-1.5
+Comm,neutral,factor-based analysis,0.0
+Comm,positive,beat estimates,1.5
+Comm,negative,competition intensifies,-1.5
+Comm,neutral,quantitative,0.0
+Comm,positive,revenue growth,1.5
+Comm,negative,saturation,-1.5
+Comm,neutral,guru report,0.0
+Comm,positive,strong demand,1.5
+Comm,negative,slowdown,-1.5
+Comm,neutral,comparison,0.0
+Comm,positive,partnership,1.5
+Comm,negative,network outage,-1.5
+Comm,neutral,vs,0.0
+Comm,positive,launch,1.5
+Comm,negative,data breach,-1.5
+Comm,neutral,better buy,0.0
+Comm,positive,exclusive rights,1.5
+Comm,negative,fine,-1.5
+Comm,neutral,oversold territory,0.0
+Comm,positive,cord-cutting slows,1.5
+Comm,negative,penalty,-1.5
+Comm,neutral,oversold (technical),0.0
+Comm,positive,rebound,1.5
+Comm,negative,steps down,-1.5
+Comm,negative,controversy,-1.5
+Consumer,positive,same-store sales growth,1.5
+Consumer,negative,recall,-1.5
+Consumer,neutral,earnings preview,0.0
+Consumer,positive,traffic boost,1.5
+Consumer,negative,inventory glut,-1.5
+Consumer,neutral,earnings call,0.0
+Consumer,positive,market share gain,1.5
+Consumer,negative,margin compression,-1.5
+Consumer,neutral,conference call,0.0
+Consumer,positive,brand strength,1.5
+Consumer,negative,cost inflation,-1.5
+Consumer,neutral,transcript,0.0
+Consumer,positive,margin expansion,1.5
+Consumer,negative,traffic decline,-1.5
+Consumer,neutral,analyst day,0.0
+Consumer,positive,pricing power,1.5
+Consumer,negative,store closure,-1.5
+Consumer,neutral,investor day,0.0
+Consumer,positive,new product launch,1.5
+Consumer,negative,layoffs,-1.5
+Consumer,neutral,watch,0.0
+Consumer,positive,buyback program,1.5
+Consumer,negative,job cuts,-1.5
+Consumer,neutral,to watch,0.0
+Consumer,positive,dividend aristocrat,1.5
+Consumer,negative,wage pressure,-1.5
+Consumer,neutral,mover,0.0
+Consumer,positive,earnings beat,1.5
+Consumer,negative,supply chain disruption,-1.5
+Consumer,neutral,most active,0.0
+Consumer,positive,revenue beat,1.5
+Consumer,negative,miss estimates,-1.5
+Consumer,neutral,options activity,0.0
+Consumer,positive,guidance raised,1.5
+Consumer,negative,guidance cut,-1.5
+Consumer,neutral,ETF inflow,0.0
+Consumer,positive,expansion,1.5
+Consumer,negative,slowdown,-1.5
+Consumer,neutral,ETF outflow,0.0
+Consumer,positive,hiring,1.5
+Consumer,negative,weak demand,-1.5
+Consumer,neutral,13F,0.0
+Consumer,positive,new store opening,1.5
+Consumer,negative,competition,-1.5
+Consumer,neutral,filers,0.0
+Consumer,positive,digital growth,1.5
+Consumer,negative,regulatory risk,-1.5
+Consumer,neutral,better buy,0.0
+Consumer,positive,e-commerce,1.5
+Consumer,negative,probe,-1.5
+Consumer,neutral,vs,0.0
+Consumer,positive,partnership,1.5
+Consumer,negative,investigation,-1.5
+Consumer,neutral,comparison,0.0
+Consumer,positive,exclusive deal,1.5
+Consumer,negative,antitrust,-1.5
+Consumer,neutral,factor-based,0.0
+Consumer,positive,recovery,1.5
+Consumer,negative,debt,-1.5
+Consumer,neutral,quantitative,0.0
+Consumer,positive,reopening,1.5
+Consumer,negative,pandemic hit,-1.5
+Consumer,neutral,guru report,0.0
+Consumer,positive,strong demand,1.5
+Consumer,negative,coronavirus impact,-1.5
+Consumer,neutral,dividend yield,0.0
+Consumer,positive,consumer staples,1.5
+Consumer,negative,covid-19,-1.5
+Consumer,neutral,ex-dividend,0.0
+Consumer,positive,defensive,1.5
+Consumer,negative,shutdown,-1.5
+Consumer,neutral,daily dividend,0.0
+Consumer,positive,oversold,1.5
+Consumer,negative,bankruptcy,-1.5
+Consumer,positive,undervalued,1.5
+Consumer,negative,dividend cut,-1.5
+Consumer,positive,bargain,1.5
+Energy,positive,oil price surge,1.5
+Energy,negative,oil crash,-1.5
+Energy,neutral,earnings scheduled,0.0
+Energy,positive,oil prices rise,1.5
+Energy,negative,oil dip,-1.5
+Energy,neutral,earnings call,0.0
+Energy,positive,crude rally,1.5
+Energy,negative,crude collapse,-1.5
+Energy,neutral,conference call,0.0
+Energy,positive,Brent rally,1.5
+Energy,negative,oversupply,-1.5
+Energy,neutral,transcript,0.0
+Energy,positive,WTI rally,1.5
+Energy,negative,inventory build,-1.5
+Energy,neutral,production update,0.0
+Energy,positive,LNG demand,1.5
+Energy,negative,glut,-1.5
+Energy,neutral,rig count,0.0
+Energy,positive,natural gas spike,1.5
+Energy,negative,demand destruction,-1.5
+Energy,neutral,Baker Hughes,0.0
+Energy,positive,geopolitical tension,1.5
+Energy,negative,recession fear,-1.5
+Energy,neutral,inventory report,0.0
+Energy,positive,supply disruption,1.5
+Energy,negative,demand outlook,-1.5
+Energy,neutral,EIA,0.0
+Energy,positive,OPEC cut,1.5
+Energy,negative,weak demand,-1.5
+Energy,neutral,OPEC meeting,0.0
+Energy,positive,production cut,1.5
+Energy,negative,price cap,-1.5
+Energy,neutral,watch,0.0
+Energy,positive,inventory draw,1.5
+Energy,negative,sanctions,-1.5
+Energy,neutral,mover,0.0
+Energy,positive,refining margin,1.5
+Energy,negative,exodus,-1.5
+Energy,neutral,most active,0.0
+Energy,positive,crack spread,1.5
+Energy,negative,asset sale,-1.5
+Energy,neutral,options,0.0
+Energy,positive,reserve growth,1.5
+Energy,negative,divestiture,-1.5
+Energy,neutral,ETF flow,0.0
+Energy,positive,discovery,1.5
+Energy,negative,write-down,-1.5
+Energy,neutral,factor-based,0.0
+Energy,positive,drilling activity,1.5
+Energy,negative,impairment,-1.5
+Energy,neutral,guru report,0.0
+Energy,positive,rig count up,1.5
+Energy,negative,dividend cut,-1.5
+Energy,neutral,analysis,0.0
+Energy,positive,backlog,1.5
+Energy,negative,suspends buyback,-1.5
+Energy,neutral,vs,0.0
+Energy,positive,dividend hike,1.5
+Energy,negative,miss estimates,-1.5
+Energy,neutral,better buy,0.0
+Energy,positive,share buyback,1.5
+Energy,negative,cost overrun,-1.5
+Energy,positive,debt reduction,1.5
+Energy,negative,project delay,-1.5
+Energy,positive,free cash flow,1.5
+Energy,negative,environmental fine,-1.5
+Energy,positive,beat,1.5
+Energy,negative,spill,-1.5
+Energy,positive,renewable transition,1.5
+Energy,negative,accident,-1.5
+Energy,positive,carbon capture,1.5
+Energy,negative,safety incident,-1.5
+Energy,positive,CCUS,1.5
+Energy,negative,carbon tax,-1.5
+Energy,positive,energy transition,1.5
+Energy,negative,stranded asset,-1.5
+Energy,negative,peak oil demand,-1.5
+Financials,positive,net interest margin expansion,1.5
+Financials,negative,NIM compression,-1.5
+Financials,neutral,earnings call,0.0
+Financials,positive,NIM up,1.5
+Financials,negative,loan loss provision,-1.5
+Financials,neutral,conference call,0.0
+Financials,positive,loan growth,1.5
+Financials,negative,charge-offs rise,-1.5
+Financials,neutral,transcript,0.0
+Financials,positive,deposit growth,1.5
+Financials,negative,credit deterioration,-1.5
+Financials,neutral,analyst day,0.0
+Financials,positive,trading revenue,1.5
+Financials,negative,default,-1.5
+Financials,neutral,watch,0.0
+Financials,positive,investment banking,1.5
+Financials,negative,delinquency,-1.5
+Financials,neutral,mover,0.0
+Financials,positive,M&A advisory,1.5
+Financials,negative,non-performing loan,-1.5
+Financials,neutral,most active,0.0
+Financials,positive,IPO pipeline,1.5
+Financials,negative,NPL,-1.5
+Financials,neutral,options,0.0
+Financials,positive,capital ratio,1.5
+Financials,negative,run on deposits,-1.5
+Financials,neutral,ex-dividend,0.0
+Financials,positive,Tier 1,1.5
+Financials,negative,liquidity crisis,-1.5
+Financials,neutral,dividend yield,0.0
+Financials,positive,stress test pass,1.5
+Financials,negative,regulatory fine,-1.5
+Financials,neutral,ETF flow,0.0
+Financials,positive,dividend hike,1.5
+Financials,negative,litigation,-1.5
+Financials,neutral,13F,0.0
+Financials,positive,buyback,1.5
+Financials,negative,lawsuit,-1.5
+Financials,neutral,filers,0.0
+Financials,positive,beat estimates,1.5
+Financials,negative,settlement,-1.5
+Financials,neutral,factor-based,0.0
+Financials,positive,earnings growth,1.5
+Financials,negative,miss estimates,-1.5
+Financials,neutral,quantitative,0.0
+Financials,positive,fee income,1.5
+Financials,negative,guidance cut,-1.5
+Financials,neutral,guru report,0.0
+Financials,positive,wealth management,1.5
+Financials,negative,trading loss,-1.5
+Financials,neutral,vs,0.0
+Financials,positive,asset management,1.5
+Financials,negative,write-down,-1.5
+Financials,neutral,better buy,0.0
+Financials,positive,AUM growth,1.5
+Financials,negative,impairment,-1.5
+Financials,neutral,comparison,0.0
+Financials,positive,credit quality improves,1.5
+Financials,negative,layoffs,-1.5
+Financials,neutral,IPO,0.0
+Financials,positive,charge-offs decline,1.5
+Financials,negative,restructuring,-1.5
+Financials,neutral,filing,0.0
+Financials,positive,reserve release,1.5
+Financials,negative,branch closure,-1.5
+Financials,positive,efficiency ratio,1.5
+Financials,negative,cost pressure,-1.5
+Financials,positive,cost saves,1.5
+Financials,negative,rate cut,-1.5
+Financials,positive,synergy,1.5
+Financials,negative,inverted yield curve,-1.5
+Financials,positive,deal,1.5
+Financials,negative,recession,-1.5
+Financials,negative,bear market,-1.5
+Financials,negative,volatility,-1.5
+Healthcare,positive,FDA approval,1.5
+Healthcare,negative,FDA rejection,-1.5
+Healthcare,neutral,earnings call,0.0
+Healthcare,positive,FDA approves,1.5
+Healthcare,negative,complete response letter,-1.5
+Healthcare,neutral,conference call,0.0
+Healthcare,positive,breakthrough therapy,1.5
+Healthcare,negative,CRL,-1.5
+Healthcare,neutral,transcript,0.0
+Healthcare,positive,fast track,1.5
+Healthcare,negative,clinical trial failure,-1.5
+Healthcare,neutral,analyst day,0.0
+Healthcare,positive,clinical trial success,1.5
+Healthcare,negative,phase 3 failure,-1.5
+Healthcare,neutral,watch,0.0
+Healthcare,positive,phase 3,1.5
+Healthcare,negative,safety concern,-1.5
+Healthcare,neutral,mover,0.0
+Healthcare,positive,pivotal trial,1.5
+Healthcare,negative,adverse event,-1.5
+Healthcare,neutral,most active,0.0
+Healthcare,positive,primary endpoint met,1.5
+Healthcare,negative,side effect,-1.5
+Healthcare,neutral,options,0.0
+Healthcare,positive,efficacy,1.5
+Healthcare,negative,black box warning,-1.5
+Healthcare,neutral,ex-dividend,0.0
+Healthcare,positive,safety profile,1.5
+Healthcare,negative,recall,-1.5
+Healthcare,neutral,dividend yield,0.0
+Healthcare,positive,label expansion,1.5
+Healthcare,negative,product withdrawal,-1.5
+Healthcare,neutral,ETF flow,0.0
+Healthcare,positive,indication expansion,1.5
+Healthcare,negative,patent cliff,-1.5
+Healthcare,neutral,13F,0.0
+Healthcare,positive,patent win,1.5
+Healthcare,negative,generic entry,-1.5
+Healthcare,neutral,filers,0.0
+Healthcare,positive,patent upheld,1.5
+Healthcare,negative,biosimilar competition,-1.5
+Healthcare,neutral,factor-based,0.0
+Healthcare,positive,generic defense,1.5
+Healthcare,negative,pricing pressure,-1.5
+Healthcare,neutral,quantitative,0.0
+Healthcare,positive,biosimilar launch,1.5
+Healthcare,negative,rebate,-1.5
+Healthcare,neutral,guru report,0.0
+Healthcare,positive,pipeline progress,1.5
+Healthcare,negative,Medicare negotiation,-1.5
+Healthcare,neutral,vs,0.0
+Healthcare,positive,new drug application,1.5
+Healthcare,negative,regulatory delay,-1.5
+Healthcare,neutral,better buy,0.0
+Healthcare,positive,NDA,1.5
+Healthcare,negative,investigation,-1.5
+Healthcare,neutral,comparison,0.0
+Healthcare,positive,BLA,1.5
+Healthcare,negative,probe,-1.5
+Healthcare,neutral,pipeline review,0.0
+Healthcare,positive,partnership,1.5
+Healthcare,negative,litigation,-1.5
+Healthcare,neutral,data readout,0.0
+Healthcare,positive,licensing deal,1.5
+Healthcare,negative,opioid settlement,-1.5
+Healthcare,positive,milestone payment,1.5
+Healthcare,negative,miss estimates,-1.5
+Healthcare,positive,royalty,1.5
+Healthcare,negative,guidance cut,-1.5
+Healthcare,positive,M&A,1.5
+Healthcare,negative,R&D setback,-1.5
+Healthcare,positive,acquisition,1.5
+Healthcare,negative,trial halt,-1.5
+Healthcare,positive,earnings beat,1.5
+Healthcare,negative,enrollment pause,-1.5
+Healthcare,positive,guidance raised,1.5
+Healthcare,positive,dividend hike,1.5
+Healthcare,positive,buyback,1.5
+Industrials,positive,backlog growth,1.5
+Industrials,negative,order cancellation,-1.5
+Industrials,neutral,earnings call,0.0
+Industrials,positive,order book,1.5
+Industrials,negative,backlog decline,-1.5
+Industrials,neutral,conference call,0.0
+Industrials,positive,new orders,1.5
+Industrials,negative,delivery delay,-1.5
+Industrials,neutral,transcript,0.0
+Industrials,positive,contract win,1.5
+Industrials,negative,production halt,-1.5
+Industrials,neutral,analyst day,0.0
+Industrials,positive,contract award,1.5
+Industrials,negative,supply chain disruption,-1.5
+Industrials,neutral,watch,0.0
+Industrials,positive,delivery beat,1.5
+Industrials,negative,parts shortage,-1.5
+Industrials,neutral,mover,0.0
+Industrials,positive,production ramp,1.5
+Industrials,negative,labor strike,-1.5
+Industrials,neutral,most active,0.0
+Industrials,positive,aerospace delivery,1.5
+Industrials,negative,labor shortage,-1.5
+Industrials,neutral,options,0.0
+Industrials,positive,fleet renewal,1.5
+Industrials,negative,tariff,-1.5
+Industrials,neutral,ex-dividend,0.0
+Industrials,positive,infrastructure bill,1.5
+Industrials,negative,trade war,-1.5
+Industrials,neutral,dividend yield,0.0
+Industrials,positive,fiscal stimulus,1.5
+Industrials,negative,margin compression,-1.5
+Industrials,neutral,ETF flow,0.0
+Industrials,positive,capex cycle,1.5
+Industrials,negative,cost inflation,-1.5
+Industrials,neutral,13F,0.0
+Industrials,positive,replacement cycle,1.5
+Industrials,negative,raw material,-1.5
+Industrials,neutral,filers,0.0
+Industrials,positive,margin expansion,1.5
+Industrials,negative,miss estimates,-1.5
+Industrials,neutral,factor-based,0.0
+Industrials,positive,cost synergy,1.5
+Industrials,negative,guidance cut,-1.5
+Industrials,neutral,quantitative,0.0
+Industrials,positive,restructuring complete,1.5
+Industrials,negative,write-down,-1.5
+Industrials,neutral,guru report,0.0
+Industrials,positive,efficiency gain,1.5
+Industrials,negative,impairment,-1.5
+Industrials,neutral,vs,0.0
+Industrials,positive,earnings beat,1.5
+Industrials,negative,restructuring,-1.5
+Industrials,neutral,better buy,0.0
+Industrials,positive,guidance raised,1.5
+Industrials,negative,layoffs,-1.5
+Industrials,neutral,comparison,0.0
+Industrials,positive,dividend hike,1.5
+Industrials,negative,plant closure,-1.5
+Industrials,neutral,order update,0.0
+Industrials,positive,buyback,1.5
+Industrials,negative,safety incident,-1.5
+Industrials,neutral,delivery schedule,0.0
+Industrials,positive,cash flow,1.5
+Industrials,negative,grounding,-1.5
+Industrials,positive,oversold,1.5
+Industrials,negative,recall,-1.5
+Industrials,positive,undervalued,1.5
+Industrials,negative,investigation,-1.5
+Industrials,positive,bargain,1.5
+Industrials,negative,probe,-1.5
+Industrials,positive,recovery,1.5
+Industrials,negative,litigation,-1.5
+Industrials,positive,reopening,1.5
+Industrials,negative,fine,-1.5
+Materials,positive,commodity price surge,1.5
+Materials,negative,commodity price drop,-1.5
+Materials,neutral,earnings call,0.0
+Materials,positive,metal price rally,1.5
+Materials,negative,metal price decline,-1.5
+Materials,neutral,conference call,0.0
+Materials,positive,steel price,1.5
+Materials,negative,oversupply,-1.5
+Materials,neutral,transcript,0.0
+Materials,positive,copper price,1.5
+Materials,negative,glut,-1.5
+Materials,neutral,analyst day,0.0
+Materials,positive,gold price,1.5
+Materials,negative,inventory build,-1.5
+Materials,neutral,watch,0.0
+Materials,positive,capacity utilization,1.5
+Materials,negative,demand slowdown,-1.5
+Materials,neutral,mover,0.0
+Materials,positive,demand recovery,1.5
+Materials,negative,China slowdown,-1.5
+Materials,neutral,most active,0.0
+Materials,positive,China demand,1.5
+Materials,negative,construction slowdown,-1.5
+Materials,neutral,options,0.0
+Materials,positive,infrastructure spending,1.5
+Materials,negative,housing decline,-1.5
+Materials,neutral,ex-dividend,0.0
+Materials,positive,construction activity,1.5
+Materials,negative,margin compression,-1.5
+Materials,neutral,dividend yield,0.0
+Materials,positive,housing starts,1.5
+Materials,negative,cost inflation,-1.5
+Materials,neutral,ETF flow,0.0
+Materials,positive,margin expansion,1.5
+Materials,negative,energy cost,-1.5
+Materials,neutral,13F,0.0
+Materials,positive,pricing power,1.5
+Materials,negative,miss estimates,-1.5
+Materials,neutral,filers,0.0
+Materials,positive,volume growth,1.5
+Materials,negative,guidance cut,-1.5
+Materials,neutral,factor-based,0.0
+Materials,positive,earnings beat,1.5
+Materials,negative,write-down,-1.5
+Materials,neutral,quantitative,0.0
+Materials,positive,guidance raised,1.5
+Materials,negative,impairment,-1.5
+Materials,neutral,guru report,0.0
+Materials,positive,dividend hike,1.5
+Materials,negative,plant closure,-1.5
+Materials,neutral,vs,0.0
+Materials,positive,buyback,1.5
+Materials,negative,layoffs,-1.5
+Materials,neutral,better buy,0.0
+Materials,positive,M&A,1.5
+Materials,negative,divestiture,-1.5
+Materials,neutral,comparison,0.0
+Materials,positive,consolidation,1.5
+Materials,negative,environmental fine,-1.5
+Materials,neutral,commodity update,0.0
+Materials,positive,new capacity,1.5
+Materials,negative,regulatory burden,-1.5
+Materials,neutral,price forecast,0.0
+Materials,positive,plant expansion,1.5
+Materials,negative,recall,-1.5
+Materials,positive,greenfield,1.5
+Materials,negative,product liability,-1.5
+Materials,positive,oversold,1.5
+Materials,negative,tariff,-1.5
+Materials,positive,undervalued,1.5
+Materials,negative,trade war,-1.5
+RealEstate,positive,occupancy rate,1.5
+RealEstate,negative,occupancy decline,-1.5
+RealEstate,neutral,earnings call,0.0
+RealEstate,positive,rent growth,1.5
+RealEstate,negative,rent roll-back,-1.5
+RealEstate,neutral,conference call,0.0
+RealEstate,positive,lease renewal,1.5
+RealEstate,negative,tenant default,-1.5
+RealEstate,neutral,transcript,0.0
+RealEstate,positive,tenant retention,1.5
+RealEstate,negative,bankruptcy,-1.5
+RealEstate,neutral,analyst day,0.0
+RealEstate,positive,NOI growth,1.5
+RealEstate,negative,vacancy,-1.5
+RealEstate,neutral,watch,0.0
+RealEstate,positive,same-store NOI,1.5
+RealEstate,negative,lease expiration,-1.5
+RealEstate,neutral,mover,0.0
+RealEstate,positive,FFO growth,1.5
+RealEstate,negative,NOI decline,-1.5
+RealEstate,neutral,most active,0.0
+RealEstate,positive,AFFO growth,1.5
+RealEstate,negative,FFO miss,-1.5
+RealEstate,neutral,options,0.0
+RealEstate,positive,cap rate compression,1.5
+RealEstate,negative,AFFO miss,-1.5
+RealEstate,neutral,ex-dividend,0.0
+RealEstate,positive,valuation gain,1.5
+RealEstate,negative,cap rate expansion,-1.5
+RealEstate,neutral,dividend yield,0.0
+RealEstate,positive,asset appreciation,1.5
+RealEstate,negative,valuation write-down,-1.5
+RealEstate,neutral,ETF flow,0.0
+RealEstate,positive,development pipeline,1.5
+RealEstate,negative,impairment,-1.5
+RealEstate,neutral,13F,0.0
+RealEstate,positive,pre-leasing,1.5
+RealEstate,negative,divestiture,-1.5
+RealEstate,neutral,filers,0.0
+RealEstate,positive,acquisition,1.5
+RealEstate,negative,asset sale,-1.5
+RealEstate,neutral,factor-based,0.0
+RealEstate,positive,portfolio expansion,1.5
+RealEstate,negative,distressed sale,-1.5
+RealEstate,neutral,quantitative,0.0
+RealEstate,positive,accretive deal,1.5
+RealEstate,negative,guidance cut,-1.5
+RealEstate,neutral,guru report,0.0
+RealEstate,positive,earnings beat,1.5
+RealEstate,negative,dividend cut,-1.5
+RealEstate,neutral,vs,0.0
+RealEstate,positive,guidance raised,1.5
+RealEstate,negative,suspension,-1.5
+RealEstate,neutral,better buy,0.0
+RealEstate,positive,dividend hike,1.5
+RealEstate,negative,interest rate sensitivity,-1.5
+RealEstate,neutral,comparison,0.0
+RealEstate,positive,buyback,1.5
+RealEstate,negative,rate hike,-1.5
+RealEstate,neutral,NAV analysis,0.0
+RealEstate,positive,oversold,1.5
+RealEstate,negative,refinancing risk,-1.5
+RealEstate,neutral,cap rate update,0.0
+RealEstate,positive,undervalued,1.5
+RealEstate,negative,debt maturity,-1.5
+RealEstate,positive,data center demand,1.5
+RealEstate,negative,supply pipeline,-1.5
+RealEstate,positive,industrial demand,1.5
+RealEstate,negative,overbuild,-1.5
+RealEstate,positive,e-commerce logistics,1.5
+RealEstate,negative,regulatory burden,-1.5
+RealEstate,negative,zoning,-1.5
+Tech,positive,AI adoption,1.5
+Tech,negative,AI hype,-1.5
+Tech,neutral,earnings call,0.0
+Tech,positive,artificial intelligence,1.5
+Tech,negative,bubble,-1.5
+Tech,neutral,conference call,0.0
+Tech,positive,machine learning,1.5
+Tech,negative,valuation concern,-1.5
+Tech,neutral,transcript,0.0
+Tech,positive,generative AI,1.5
+Tech,negative,overvalued,-1.5
+Tech,neutral,analyst day,0.0
+Tech,positive,cloud growth,1.5
+Tech,negative,multiple compression,-1.5
+Tech,neutral,watch,0.0
+Tech,positive,SaaS growth,1.5
+Tech,negative,cloud slowdown,-1.5
+Tech,neutral,mover,0.0
+Tech,positive,ARR growth,1.5
+Tech,negative,SaaS deceleration,-1.5
+Tech,neutral,most active,0.0
+Tech,positive,subscription growth,1.5
+Tech,negative,churn,-1.5
+Tech,neutral,options,0.0
+Tech,positive,data center demand,1.5
+Tech,negative,customer concentration,-1.5
+Tech,neutral,ex-dividend,0.0
+Tech,positive,chip demand,1.5
+Tech,negative,chip glut,-1.5
+Tech,neutral,dividend yield,0.0
+Tech,positive,semiconductor shortage easing,1.5
+Tech,negative,inventory correction,-1.5
+Tech,neutral,ETF flow,0.0
+Tech,positive,5G adoption,1.5
+Tech,negative,semiconductor downturn,-1.5
+Tech,neutral,13F,0.0
+Tech,positive,IoT,1.5
+Tech,negative,export curb,-1.5
+Tech,neutral,filers,0.0
+Tech,positive,edge computing,1.5
+Tech,negative,export restriction,-1.5
+Tech,neutral,factor-based,0.0
+Tech,positive,cybersecurity demand,1.5
+Tech,negative,ban,-1.5
+Tech,neutral,quantitative,0.0
+Tech,positive,new product,1.5
+Tech,negative,sanctions,-1.5
+Tech,neutral,guru report,0.0
+Tech,positive,product launch,1.5
+Tech,negative,supply chain,-1.5
+Tech,neutral,vs,0.0
+Tech,positive,platform expansion,1.5
+Tech,negative,geopolitical risk,-1.5
+Tech,neutral,better buy,0.0
+Tech,positive,partnership,1.5
+Tech,negative,antitrust,-1.5
+Tech,neutral,comparison,0.0
+Tech,positive,integration,1.5
+Tech,negative,regulatory probe,-1.5
+Tech,neutral,product review,0.0
+Tech,positive,earnings beat,1.5
+Tech,negative,privacy fine,-1.5
+Tech,neutral,feature update,0.0
+Tech,positive,revenue beat,1.5
+Tech,negative,data breach,-1.5
+Tech,neutral,conference,0.0
+Tech,positive,guidance raised,1.5
+Tech,negative,cyberattack,-1.5
+Tech,neutral,developer day,0.0
+Tech,positive,margin expansion,1.5
+Tech,negative,miss estimates,-1.5
+Tech,positive,buyback,1.5
+Tech,negative,guidance cut,-1.5
+Tech,positive,dividend hike,1.5
+Tech,negative,layoffs,-1.5
+Tech,positive,M&A,1.5
+Tech,negative,hiring freeze,-1.5
+Tech,positive,acquisition,1.5
+Tech,negative,restructuring,-1.5
+Tech,positive,contract win,1.5
+Utilities,positive,rate case approval,1.5
+Utilities,negative,rate case denial,-1.5
+Utilities,neutral,earnings call,0.0
+Utilities,positive,rate hike approved,1.5
+Utilities,negative,rate hike rejected,-1.5
+Utilities,neutral,conference call,0.0
+Utilities,positive,regulatory approval,1.5
+Utilities,negative,regulatory lag,-1.5
+Utilities,neutral,transcript,0.0
+Utilities,positive,ROE,1.5
+Utilities,negative,ROE compression,-1.5
+Utilities,neutral,analyst day,0.0
+Utilities,positive,earned ROE,1.5
+Utilities,negative,allowed return cut,-1.5
+Utilities,neutral,watch,0.0
+Utilities,positive,allowed return,1.5
+Utilities,negative,storm cost,-1.5
+Utilities,neutral,mover,0.0
+Utilities,positive,grid investment,1.5
+Utilities,negative,storm recovery,-1.5
+Utilities,neutral,most active,0.0
+Utilities,positive,infrastructure spend,1.5
+Utilities,negative,wildfire liability,-1.5
+Utilities,neutral,options,0.0
+Utilities,positive,renewable mix,1.5
+Utilities,negative,nuclear decommissioning,-1.5
+Utilities,neutral,ex-dividend,0.0
+Utilities,positive,clean energy,1.5
+Utilities,negative,coal retirement cost,-1.5
+Utilities,neutral,dividend yield,0.0
+Utilities,positive,solar,1.5
+Utilities,negative,environmental fine,-1.5
+Utilities,neutral,ETF flow,0.0
+Utilities,positive,wind,1.5
+Utilities,negative,EPA rule,-1.5
+Utilities,neutral,13F,0.0
+Utilities,positive,battery storage,1.5
+Utilities,negative,carbon regulation,-1.5
+Utilities,neutral,filers,0.0
+Utilities,positive,dividend aristocrat,1.5
+Utilities,negative,miss estimates,-1.5
+Utilities,neutral,factor-based,0.0
+Utilities,positive,dividend growth,1.5
+Utilities,negative,guidance cut,-1.5
+Utilities,neutral,quantitative,0.0
+Utilities,positive,earnings beat,1.5
+Utilities,negative,dividend cut,-1.5
+Utilities,neutral,guru report,0.0
+Utilities,positive,guidance raised,1.5
+Utilities,negative,payout ratio concern,-1.5
+Utilities,neutral,vs,0.0
+Utilities,positive,AFFO growth,1.5
+Utilities,negative,debt increase,-1.5
+Utilities,neutral,better buy,0.0
+Utilities,positive,FFO growth,1.5
+Utilities,negative,refinancing risk,-1.5
+Utilities,neutral,comparison,0.0
+Utilities,positive,customer growth,1.5
+Utilities,negative,interest rate sensitivity,-1.5
+Utilities,neutral,rate case update,0.0
+Utilities,positive,load growth,1.5
+Utilities,negative,rate hike headwind,-1.5
+Utilities,neutral,regulatory filing,0.0
+Utilities,positive,merger synergy,1.5
+Utilities,negative,load decline,-1.5
+Utilities,positive,cost savings,1.5
+Utilities,positive,efficiency program,1.5
+Utilities,positive,defensive,1.5
